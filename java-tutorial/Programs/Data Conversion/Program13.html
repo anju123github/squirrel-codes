@@ -48,21 +48,50 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Data Conversion</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>13. How to convert String to Object</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+public class StringToObjectConversion {
+    public static void main(String[] args) {
+        // Convert String to Object using Object class
+        String stringValue = "Hello, World!";
+        Object objectValue = (Object) stringValue;
+
+        // Convert String to custom object
+        MyObject customObject = new MyObject(stringValue);
+
+        // Print the results
+        System.out.println("Original String: " + stringValue);
+        System.out.println("Converted to Object: " + objectValue);
+        System.out.println("Converted to Custom Object: " + customObject);
+    }
+
+    // Define a custom class
+    static class MyObject {
+        private String value;
+
+        public MyObject(String value) {
+            this.value = value;
+        }
+
+        @Override
+        public String toString() {
+            return "MyObject{" +
+                    "value='" + value + '\'' +
+                    '}';
+        }
     }
 }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Original String: Hello, World!
+Converted to Object: Hello, World!
+Converted to Custom Object: MyObject{value='Hello, World!'}
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

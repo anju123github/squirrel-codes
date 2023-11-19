@@ -51,18 +51,49 @@
             <h3 class="main">Java Basics</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>35. Java Program to find volume of cylinder</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                
+                class ValumeOfCylinder{
+
+                    double area(double radius, double height){
+    
+                    return (Math.PI * radius * radius * height);
+    
+                    }
+    
+                    }
+    
+                    class Cylinder{
+    
+                    public static void main(String a[]){
+    
+                    double r = 14;
+    
+                    double h=20 ;
+    
+                    System.out.println("Radius of Cylinder: "+r);
+    
+                    System.out.println("Height of Cylinder: "+h);
+    
+                    ValumeOfCylinder obj = new ValumeOfCylinder();
+    
+                    double ans = obj.area(r,h);
+    
+                    System.out.println("Valume of Cylinder is "+ ans);
+    
+                    }
+    
+                    }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Radius of Cylinder: 14.0
+
+Height of Cylinder: 20.0
+
+Valume of Cylinder is 12315.04320207198
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

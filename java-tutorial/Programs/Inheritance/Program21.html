@@ -48,21 +48,85 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Inheritance</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>21. Write a Java program to create an abstract class Vehicle with abstract methods startEngine() and stopEngine(). Create subclasses Car and Motorcycle that extend the Vehicle class and implement the respective methods to start and stop the engines for each vehicle type.</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+// Abstract class Vehicle
+abstract class Vehicle {
+    // Abstract methods
+    public abstract void startEngine();
+    public abstract void stopEngine();
+}
+                                        
+// Subclass Car extending Vehicle
+class Car extends Vehicle {
+    // Implementing the startEngine method for Car
+    
+    public void startEngine() {
+        System.out.println("Car engine started");
+    }
+                                        
+    // Implementing the stopEngine method for Car
+    
+    public void stopEngine() {
+        System.out.println("Car engine stopped");
     }
 }
+                                        
+// Subclass Motorcycle extending Vehicle
+class Motorcycle extends Vehicle {
+    // Implementing the startEngine method for Motorcycle
+    
+    public void startEngine() {
+        System.out.println("Motorcycle engine started");
+    }
+                                        
+    // Implementing the stopEngine method for Motorcycle
+    
+    public void stopEngine() {
+        System.out.println("Motorcycle engine stopped");
+    }
+}
+                                        
+// Main class
+public class AbstractVehicleExample {
+    public static void main(String[] args) {
+        // Create instances of Car and Motorcycle
+        Car car = new Car();
+        Motorcycle motorcycle = new Motorcycle();
+                                        
+        // Start and stop engines for Car and Motorcycle
+        System.out.println("Car:");
+        car.startEngine();
+        car.stopEngine();
+                                        
+        System.out.println(); // Empty line for clarity
+                                        
+        System.out.println("Motorcycle:");
+        motorcycle.startEngine();
+        motorcycle.stopEngine();
+    }
+}  
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Car: 
+
+    Car engine started 
+
+    Car engine stopped 
+
+    
+    
+Motorcycle: 
+
+    Motorcycle engine started 
+
+    Motorcycle engine stopped  
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

@@ -48,21 +48,52 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Strings</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>41. Program to Splitting into a number of sub-strings</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+import java.util.Scanner;
+public class SplitString {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input the string
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine();
+
+        // Input the delimiter
+        System.out.print("Enter the delimiter: ");
+        String delimiter = scanner.nextLine();
+
+        // Split the string into substrings
+        String[] substrings = splitString(inputString, delimiter);
+
+        // Output the result
+        System.out.println("Original String: " + inputString);
+        System.out.println("Substrings:");
+        for (String substring : substrings) {
+            System.out.println(substring);
+        }
+    }
+
+    private static String[] splitString(String input, String delimiter) {
+        // Using the split method to split the string into substrings
+        return input.split(delimiter);
     }
 }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Enter a string: Hello,World,Java
+Enter the delimiter: ,
+Original String: Hello,World,Java
+Substrings:
+Hello
+World
+Java
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

@@ -48,21 +48,46 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">1D Array</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>14. Program to sort the elements of an array in ascending order</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                import java.util.Arrays;
+
+public class SortArrayAscendingExample {
+    public static void main(String[] args) {
+        int[] array = {64, 25, 12, 22, 11};
+                                        
+        System.out.println("Original Array:");
+        printArray(array);
+                                        
+        // Sort the array in ascending order
+        Arrays.sort(array);
+                                        
+        System.out.println("\nArray in Ascending Order:");
+        printArray(array);
     }
-}
+                                        
+    private static void printArray(int[] array) {
+        for (int value : array) {
+            System.out.print(value + " ");
+        }
+    }
+}  
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Original Array: 
+
+64 25 12 22 11  
+
+ 
+
+Array in Ascending Order: 
+
+11 12 22 25 64 
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

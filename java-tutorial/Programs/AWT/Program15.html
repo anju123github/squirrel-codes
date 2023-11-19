@@ -48,21 +48,35 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">AWT</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>15. Create a simple AWT application that displays a List with Custom Layout.</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                
+                import java.awt.Choice;
+                import java.awt.Frame;
+                class prog15{
+                public static void main(String args[]){
+                Frame f=new Frame("Custom list app");
+                 Choice choose =new Choice();
+                choose.add("Home");
+                choose.add("Office");
+                choose.add("Card");
+                choose.add("Tables");
+                choose.add("Hourse");
+                choose.add("Purse");
+                choose.add("All");
+                f.add(choose);
+                f.setSize(300,300);
+                f.setVisible(true);
+                }
+                }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    <img src="15.png">
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

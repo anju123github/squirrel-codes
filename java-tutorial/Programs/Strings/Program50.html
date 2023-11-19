@@ -48,21 +48,41 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Strings</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>50. Create an object StringBuffer class to show functionality of insert, append, delete and replace functions.</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                public class StringBufferExample {
+                    public static void main(String[] args) {
+                        // Creating a StringBuffer object
+                        StringBuffer stringBuffer = new StringBuffer("Hello, World!");
+                        
+                        // Appending a string at the end
+                        stringBuffer.append(" How are you?");
+                        System.out.println("After Append: " + stringBuffer);
+                        
+                        // Inserting a string at a specific position
+                        stringBuffer.insert(7, "Awesome ");
+                        System.out.println("After Insert: " + stringBuffer);
+                        
+                        // Deleting characters from index 7 to 15
+                        stringBuffer.delete(7, 15);
+                        System.out.println("After Delete: " + stringBuffer);
+                        
+                       // Replacing a substring
+                        stringBuffer.replace(0, 5, "Hi");
+                        System.out.println("After Replace: " + stringBuffer);
+                    }
+                }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+After Append: Hello, World! How are you?
+After Insert: Hello, Awesome World! How are you?
+After Delete: Hello, World! How are you?
+After Replace: Hi, World! How are you?
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

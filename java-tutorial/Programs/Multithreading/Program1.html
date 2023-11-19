@@ -48,21 +48,26 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Multithreading</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>1. Write a Java program to create a basic Java thread that prints "Hello, World!" when executed.</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                public class HelloWorldThread extends Thread {
+                    public void run() {
+                       System.out.println("Hello, World!");
+                    }
+                
+                    public static void main(String[] args) {
+                       HelloWorldThread helloThread = new HelloWorldThread();
+                        helloThread.start();
+                    }
+                }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    Hello, World!
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

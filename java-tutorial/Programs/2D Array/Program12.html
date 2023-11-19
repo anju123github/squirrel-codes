@@ -48,21 +48,137 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">2D Array</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>12. Program to Transpose matrix</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+import java.util.Scanner;
+
+public class TransposeMatrix {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+                                
+        // Get the dimensions of the matrix
+        System.out.print("Enter the number of rows: ");
+        int rows = scanner.nextInt();
+                                
+        System.out.print("Enter the number of columns: ");
+        int columns = scanner.nextInt();
+                                
+        // Create a matrix
+        int[][] matrix = new int[rows][columns];
+                                
+        // Get elements for the matrix
+        enterMatrixElements(scanner, matrix);
+                                
+        // Calculate and display the transpose of the matrix
+        System.out.println("Original Matrix:");
+        printMatrix(matrix);
+                                
+        int[][] transposeMatrix = calculateTranspose(matrix);
+                                
+        System.out.println("Transpose of the Matrix:");
+        printMatrix(transposeMatrix);
+                                
+        scanner.close();
     }
-}
+                                
+    // Function to enter matrix elements
+    private static void enterMatrixElements(Scanner scanner, int[][] matrix) {
+        System.out.println("Enter elements for the matrix:");
+                                
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                System.out.print("Enter element at position [" + i + "][" + j + "]: ");
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+    }
+                                
+    // Function to calculate the transpose of a matrix
+    private static int[][] calculateTranspose(int[][] matrix) {
+        int rows = matrix.length;
+        int columns = matrix[0].length;
+                                
+        int[][] transposeMatrix = new int[columns][rows];
+                                
+        for (int i = 0; i < columns; i++) {
+            for (int j = 0; j < rows; j++) {
+                transposeMatrix[i][j] = matrix[j][i];
+            }
+        }
+                                
+        return transposeMatrix;
+    }
+                                
+    // Function to print a matrix
+    private static void printMatrix(int[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println(); // Move to the next row
+        }
+        System.out.println(); // Separate matrices by a blank line
+    }
+} 
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    Enter the number of rows: 3 
+
+Enter the number of columns: 4 
+
+Enter elements for the matrix: 
+
+Enter element at position [0][0]: 1 
+
+Enter element at position [0][1]: 2 
+
+Enter element at position [0][2]: 3 
+
+Enter element at position [0][3]: 4 
+
+Enter element at position [1][0]: 5 
+
+Enter element at position [1][1]: 6 
+
+Enter element at position [1][2]: 7 
+
+Enter element at position [1][3]: 8 
+
+Enter element at position [2][0]: 9 
+
+Enter element at position [2][1]: 10 
+
+Enter element at position [2][2]: 11 
+
+Enter element at position [2][3]: 12 
+
+ 
+
+Original Matrix: 
+
+1 2 3 4  
+
+5 6 7 8  
+
+9 10 11 12  
+
+ 
+
+Transpose of the Matrix: 
+
+1 5 9  
+
+2 6 10  
+
+3 7 11  
+
+4 8 12  
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

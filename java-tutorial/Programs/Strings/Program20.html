@@ -48,21 +48,75 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Strings</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>20. Program to find all subsets of a string</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class SubsetsOfString {
+
+    // Function to find all subsets of a string
+    static ArrayList getAllSubsets(String str) {
+        int n = str.length();
+        ArrayList subsets = new ArrayList<>();
+
+        // Total number of subsets is 2^n
+        int totalSubsets = (int) Math.pow(2, n);
+
+        // Generate all possible binary representations of subsets
+        for (int i = 0; i < totalSubsets; i++) {
+            StringBuilder subset = new StringBuilder();
+
+            // Map each bit of binary representation to corresponding character in the string
+            for (int j = 0; j < n; j++) {
+                if ((i & (1 << j)) != 0) {
+                    subset.append(str.charAt(j));
+                }
+            }
+
+            // Add the subset to the list
+            subsets.add(subset.toString());
+        }
+
+        return subsets;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input the string
+        System.out.print("Enter the string: ");
+        String inputString = scanner.nextLine();
+
+        // Get all subsets of the string
+        ArrayList subsets = getAllSubsets(inputString);
+
+        // Display the subsets
+        System.out.println("All subsets of the string are:");
+        for (String subset : subsets) {
+            System.out.println(subset);
+        }
+
+        scanner.close();
     }
 }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Enter the string: abc
+All subsets of the string are:
+a
+b
+ab
+c
+ac
+bc
+abc
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

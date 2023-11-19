@@ -48,21 +48,32 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Strings</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>8. Program to Add Characters to a String</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                public class AddCharactersToString {
+                    public static void main(String[] args) {
+                        // Original string
+                        String originalString = "Hello, ";
+                
+                        // Characters to add
+                        String charactersToAdd = "World!";
+                
+                        // Using the + operator to add characters
+                       String modifiedString = originalString + charactersToAdd;
+                
+                        // Display the result
+                        System.out.println("Modified String: " + modifiedString);
+                    }
+                }
+                   
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    Modified String: Hello, World!
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

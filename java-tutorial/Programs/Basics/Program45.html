@@ -51,18 +51,40 @@
             <h3 class="main">Java Basics</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>45. Java Program to calculate electricity bill</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                
+                class Factorial{
+
+                    public static void main(String args[]){
+
+                    int i,fact=1;
+
+
+                    java.util.Scanner Input = new java.util.Scanner(System.in);
+
+                    System.out.print("Enter a number for factorial: ");
+
+                    int number= Input.nextInt();
+
+                    for(i=1;i<=number;i++){
+
+                    fact=fact*i;
+
+                    }
+
+                    System.out.println("Factorial of "+number+" is: "+fact);
+
+                    }
+
+                    }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    Enter a number for factorial: 5
+
+    Factorial of 5 is: 120
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

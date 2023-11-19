@@ -48,21 +48,50 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Inheritance</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>2. Write a Java program to create a class called Vehicle with a method called drive(). Create a subclass called Car that overrides the drive() method to print "Repairing a car".</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+// Base class Vehicle
+class Vehicle {
+    // Method to drive the vehicle
+    public void drive() {
+        System.out.println("Vehicle is being driven");
     }
 }
+                                        
+// Subclass Car extending Vehicle
+class Car extends Vehicle {
+    // Override the drive method to print "Repairing a car"
+    
+    public void drive() {
+        System.out.println("Repairing a car");
+    }
+}
+                                        
+// Main class
+public class VehicleExample {
+    public static void main(String[] args) {
+        // Create an instance of Vehicle
+        Vehicle myVehicle = new Vehicle();
+
+        // Create an instance of Car
+        Car myCar = new Car();
+
+        // Demonstrate drive for both instances
+        myVehicle.drive(); // Output: Vehicle is being driven
+        myCar.drive();     // Output: Repairing a car
+    }
+}  
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Vehicle is being driven 
+
+Repairing a car
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

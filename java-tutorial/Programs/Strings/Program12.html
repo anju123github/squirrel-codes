@@ -48,21 +48,45 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Strings</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>12. Program to Convert String to String Array</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                public class StringToArrayExample {
+                    public static void main(String[] args) {
+                        // Convert String to String array
+                       String inputString = "Hello, World! This is a sample string.";
+                        String[] stringArray = stringToStringArray(inputString);
+                
+                        // Print the output
+                        System.out.println("Original String: " + inputString);
+                        System.out.println("Converted String Array: ");
+                        for (String str : stringArray) {
+                            System.out.println(str);
+                        }
+                    }
+                
+                    // Method to convert String to String array
+                    private static String[] stringToStringArray(String input) {
+                        // Split the input string using a space as the delimiter
+                        // You can change the delimiter based on your requirements
+                        return input.split("\\s+");
+                    }
+                }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    Original String: Hello, World! This is a sample string.
+    Converted String Array: 
+    Hello,
+    World!
+    This
+    is
+    a
+    sample
+    string.
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

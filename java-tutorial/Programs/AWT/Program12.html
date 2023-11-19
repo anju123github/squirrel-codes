@@ -48,21 +48,51 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">AWT</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>12. Create a simple AWT application that displays a CheckboxGroup with FlowLayout manager.n</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                import java.awt.*;
+                import java.awt.event.*;
+                class awtpro1
+                {
+                    awtpro1()
+                    {
+                        Frame f= new Frame("checkbox Group");
+                        Label l1= new Label("which is your favourite programming language?");
+                        CheckboxGroup cg= new CheckboxGroup();
+                        Checkbox c1= new Checkbox("HTML",cg, false);
+                        Checkbox c2= new Checkbox("C",cg, false);
+                        Checkbox c3= new Checkbox("C++",cg, false);
+                        Checkbox c4= new Checkbox("JAVA",cg, false);
+                        f.setSize(700,400);
+                        f.setLayout( new FlowLayout());
+                        f.setVisible(true);
+                        f.add(l1);
+                        f.add(c1);
+                        f.add(c2);
+                        f.add(c3);
+                        f.add(c4);
+                        f.addWindowListener (new WindowAdapter() {    
+                            public void windowClosing (WindowEvent e) {    
+                                System.exit(1);    
+                            }    
+                       });
+                      }
+                    public static void main(String st[])
+                    {
+                        new awtpro1();
+                    }
+                    
+                }
+              
+    
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    <img src="12.png">
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

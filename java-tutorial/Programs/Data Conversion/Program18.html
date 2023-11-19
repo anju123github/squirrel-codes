@@ -48,21 +48,39 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Data Conversion</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>18. How to convert double to int</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                public class DoubleToIntConversion {
+                    public static void main(String[] args) {
+                        // Convert double to int with explicit casting
+                        double doubleValue = 42.75;
+                        int intValue = (int) doubleValue;
+                
+                        // Print the results
+                        System.out.println("Original double value: " + doubleValue);
+                        System.out.println("Converted to int value (with explicit casting): " + intValue);
+                
+                        // Convert double to int with rounding
+                        double anotherDoubleValue = 78.56;
+                        int roundedValue = (int) Math.round(anotherDoubleValue);
+                
+                        // Print the results
+                        System.out.println("\nOriginal double value: " + anotherDoubleValue);
+                        System.out.println("Rounded to int value: " + roundedValue);
+                    }
+                }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Original double value: 42.75
+Converted to int value (with explicit casting): 42
+
+Original double value: 78.56
+Rounded to int value: 79
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

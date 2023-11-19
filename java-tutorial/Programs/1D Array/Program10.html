@@ -48,21 +48,50 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">1D Array</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>10. Program to print the smallest element in an array</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                public class SmallestElementExample {
+                    public static void main(String[] args) {
+                        int[] array = {12, 45, 78, 23, 56, 89, 34, 67};
+                                                        
+                        System.out.println("Original Array:");
+                        printArray(array);
+                                                        
+                        int smallestElement = findSmallestElement(array);
+                        System.out.println("\nSmallest Element in the Array: " + smallestElement);
+                    }
+                                                        
+                    private static int findSmallestElement(int[] array) {
+                        int min = array[0];
+                                                        
+                        for (int i = 1; i < array.length; i++) {
+                            if (array[i] < min) {
+                                min = array[i];
+                            }
+                        }
+                                                        
+                        return min;
+                    }
+                                                        
+                    private static void printArray(int[] array) {
+                        for (int value : array) {
+                            System.out.print(value + " ");
+                        }
+                    }
+                }  
+                
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Original Array: 
+
+12 45 78 23 56 89 34 67  
+
+Smallest Element in the Array: 12
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

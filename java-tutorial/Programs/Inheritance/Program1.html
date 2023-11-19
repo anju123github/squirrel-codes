@@ -48,21 +48,49 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Inheritance</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>1. Write a Java program to create a class called Animal with a method called makeSound(). Create a subclass called Cat that overrides the makeSound() method to bark.</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+/ Base class Animal
+class Animal {
+    // Method to make a generic sound
+    public void makeSound() {
+        System.out.println("Animal makes a generic sound");
     }
 }
+                                        
+// Subclass Cat extending Animal
+class Cat extends Animal {
+    // Override the makeSound method to bark
+    
+    public void makeSound() {
+        System.out.println("Cat makes a 'Meow' sound");
+    }
+}
+                                        
+// Main class
+public class AnimalExample {
+    public static void main(String[] args) {
+        // Create an instance of Animal
+        Animal genericAnimal = new Animal();
+
+        // Create an instance of Cat
+        Cat myCat = new Cat();
+
+        // Demonstrate makeSound for both instances
+        genericAnimal.makeSound(); // Output: Animal makes a generic sound
+        myCat.makeSound();         // Output: Cat makes a 'Meow' sound
+    }
+} 
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Animal makes a generic sound 
+
+Cat makes a 'Meow' sound
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

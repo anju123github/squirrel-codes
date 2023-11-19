@@ -48,21 +48,40 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">OOPs</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>12. Write a Java program to create a class called "Airplane" with a flight number, destination, and departure time attributes, and methods to check flight status and delay.</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+import java.text.SimpleDateFormat;
+
+public class AirplaneExample {
+    public static void main(String[] args) {
+        // Create an instance of the Airplane class
+        Airplane myFlight = new Airplane("FL123", "New York", new Date());
+
+        // Display initial flight status
+        System.out.println("Initial Flight Status: " + myFlight.checkFlightStatus());
+
+        // Simulate a delay in the flight
+        myFlight.delayFlight();
+
+        // Display updated flight status after delay
+        System.out.println("Updated Flight Status: " + myFlight.checkFlightStatus());
+
+        // Display the departure time
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        System.out.println("Departure Time: " + dateFormat.format(myFlight.getDepartureTime()));
     }
 }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Initial Flight Status: Flight FL123 to New York is on time.
+Updated Flight Status: Flight FL123 to New York is delayed.
+Departure Time: 2023-11-16 12:34:56
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

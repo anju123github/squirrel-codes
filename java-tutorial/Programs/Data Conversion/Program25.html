@@ -48,21 +48,31 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Data Conversion</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>25. How to convert Binary to Decimal</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+public class BinaryToDecimalExample {
+    public static void main(String[] args) {
+        // Binary number as a string
+        String binaryNumber = "1101";
+
+        // Convert binary to decimal
+        int decimalNumber = Integer.parseInt(binaryNumber, 2);
+
+        // Display the results
+        System.out.println("Binary number: " + binaryNumber);
+        System.out.println("Decimal number: " + decimalNumber);
     }
 }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Binary number: 1101
+Decimal number: 13
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

@@ -48,21 +48,97 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Multithreading</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>12. Create the program to create multiple threads, show an example of notify, notifyall, wait, resume, sleep methods.</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+class SharedResource {
+    boolean isDataReady = false;
+
+    synchronized void produceData() {
+        System.out.println("Producer is producing data...");
+        // Simulating some time to produce data
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        isDataReady = true;
+        System.out.println("Producer has produced data.");
+        notify(); // Notify the waiting consumer
+    }
+
+    synchronized void consumeData() {
+        while (!isDataReady) {
+            System.out.println("Consumer is waiting for data...");
+            try {
+                wait(); // Wait until producer notifies
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("Consumer has consumed data.");
+    }
+}
+
+class Producer extends Thread {
+    private SharedResource sharedResource;
+
+    public Producer(SharedResource sharedResource) {
+        this.sharedResource = sharedResource;
+    }
+
+    @Override
+    public void run() {
+        sharedResource.produceData();
+    }
+}
+
+class Consumer extends Thread {
+    private SharedResource sharedResource;
+
+    public Consumer(SharedResource sharedResource) {
+        this.sharedResource = sharedResource;
+    }
+
+    @Override
+    public void run() {
+        sharedResource.consumeData();
+    }
+}
+
+public class ThreadSynchronizationExample {
+    public static void main(String[] args) throws InterruptedException {
+        SharedResource sharedResource = new SharedResource();
+
+        // Creating producer and consumer threads
+        Producer producerThread = new Producer(sharedResource);
+        Consumer consumerThread = new Consumer(sharedResource);
+
+        // Starting consumer thread first
+        consumerThread.start();
+
+        // Sleeping for a while to ensure that the consumer starts waiting before the producer produces data
+        Thread.sleep(1000);
+
+        // Starting producer thread
+        producerThread.start();
+
+        // Wait for both threads to finish
+        producerThread.join();
+        consumerThread.join();
     }
 }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Consumer is waiting for data...
+Producer is producing data...
+Producer has produced data.
+Consumer has consumed data.
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

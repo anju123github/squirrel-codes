@@ -48,21 +48,36 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Applets</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>15. Java Program to Draw a Smiling Face using Graphics Class Methods</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
+            <pre class="code"><code class="language-java">
+import java.applet.Applet;
+import java.awt.*;
+
+   //
+   
+public class appro1 extends Applet 
+{
+  public void paint(Graphics g) 
+   {
+      setBackground(Color.red);
+      g.setColor(Color.yellow);
+      g.fillOval(100, 100, 350, 350);
+   
+      g.setColor(Color.black);
+      g.fillOval(195, 190, 40, 40);
+      g.fillOval(325, 190, 40, 40);
+      g.drawArc(200, 290, 150, 70, 180, 180);
+   }
+
 }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    <img src="15.png">
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

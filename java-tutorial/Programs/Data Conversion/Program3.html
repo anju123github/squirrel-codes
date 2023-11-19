@@ -48,21 +48,30 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Data Conversion</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>3. How to convert String to long</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+public class StringToLongConverter {
+
+    public static void main(String[] args) {
+        // Example string containing a long value
+        String longStr = "123456789012345";
+                                
+        // Convert the string to a long using parseLong
+        long convertedLong = Long.parseLong(longStr);
+                                
+        // Print the result
+        System.out.println("Converted long: " + convertedLong);
     }
-}
+}  
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    Converted long: 123456789012345 
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

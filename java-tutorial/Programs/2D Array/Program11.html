@@ -48,21 +48,130 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">2D Array</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>11. Program to determine whether a given matrix is an identity matrix</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+             
+import java.util.Scanner;
+
+public class IdentityMatrix {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+                                
+        // Get the order of the square matrix
+        System.out.print("Enter the order of the square matrix: ");
+        int order = scanner.nextInt();
+                                
+        // Create a square matrix
+        int[][] matrix = new int[order][order];
+                                
+        // Get elements for the matrix
+        enterMatrixElements(scanner, matrix);
+                                
+        // Check if the matrix is an identity matrix
+        boolean isIdentityMatrix = checkIdentityMatrix(matrix);
+                                
+        // Print the original matrix and the result
+        System.out.println("Original Matrix:");
+        printMatrix(matrix);
+                                
+        if (isIdentityMatrix) {
+            System.out.println("The matrix is an Identity Matrix.");
+        } else {
+            System.out.println("The matrix is not an Identity Matrix.");
+        }
+                                
+        scanner.close();
     }
-}
+                                
+    // Function to enter matrix elements
+    private static void enterMatrixElements(Scanner scanner, int[][] matrix) {
+        System.out.println("Enter elements for the matrix:");
+                                
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                System.out.print("Enter element at position [" + i + "][" + j + "]: ");
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+    }
+                                
+    // Function to check if a matrix is an identity matrix
+    private static boolean checkIdentityMatrix(int[][] matrix) {
+        int order = matrix.length;
+                                
+        // Check if the matrix is square
+        if (matrix[0].length != order) {
+            return false;
+        }
+                                
+        // Check the diagonal elements
+        for (int i = 0; i < order; i++) {
+            for (int j = 0; j < order; j++) {
+                if (i == j && matrix[i][j] != 1) {
+                    return false;
+                } else if (i != j && matrix[i][j] != 0) {
+                    return false;
+                }
+            }
+        }
+                                
+        return true;
+    }
+                                
+    // Function to print a matrix
+    private static void printMatrix(int[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println(); // Move to the next row
+        }
+        System.out.println(); // Separate matrices by a blank line
+    }
+}   
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    Enter the order of the square matrix: 3 
+
+Enter elements for the matrix: 
+
+Enter element at position [0][0]: 1 
+
+Enter element at position [0][1]: 0 
+
+Enter element at position [0][2]: 0 
+
+Enter element at position [1][0]: 0 
+
+Enter element at position [1][1]: 1 
+
+Enter element at position [1][2]: 0 
+
+Enter element at position [2][0]: 0 
+
+Enter element at position [2][1]: 0 
+
+Enter element at position [2][2]: 1 
+
+ 
+
+Original Matrix: 
+
+1 0 0  
+
+0 1 0  
+
+0 0 1  
+
+ 
+
+The matrix is an Identity Matrix. 
+
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

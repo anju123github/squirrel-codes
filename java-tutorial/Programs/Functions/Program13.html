@@ -48,21 +48,43 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Functions</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>13. Write a Java method that checks whether all the characters in a given string are vowels (a, e,i,o,u) or not. Return true if each character in the string is a vowel, otherwise return false.</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                public class VowelChecker {
+
+                    // Method to check if all characters in a string are vowels
+                    public static boolean areAllCharactersVowels(String input) {
+                        // Convert the string to lowercase for case-insensitive comparison
+                        String lowerCaseInput = input.toLowerCase();
+                                                
+                        // Check if each character in the string is a vowel
+                        for (char ch : lowerCaseInput.toCharArray()) {
+                            if (ch != 'a' && ch != 'e' && ch != 'i' && ch != 'o' && ch != 'u') {
+                                return false; // If any character is not a vowel, return false
+                            }
+                        }
+                        return true; // All characters are vowels
+                    }
+                                                
+                    public static void main(String[] args) {
+                        // Example usage
+                        String str1 = "aeiou";
+                        String str2 = "hello";
+                                                
+                        System.out.println("Are all characters in \"" + str1 + "\" vowels? " + areAllCharactersVowels(str1));
+                        System.out.println("Are all characters in \"" + str2 + "\" vowels? " + areAllCharactersVowels(str2));
+                    }
+                }  
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Are all characters in "aeiou" vowels? true 
+
+Are all characters in "hello" vowels? false 
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

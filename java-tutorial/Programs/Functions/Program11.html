@@ -48,21 +48,33 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Functions</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>11. Write a Java method that accepts three integers and checks whether they are consecutive or not. Returns true or false.</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                public class ConsecutiveChecker {
+
+                    // Method to check if three integers are consecutive
+                    public static boolean areConsecutive(int num1, int num2, int num3) {
+                        // Check if the difference between consecutive numbers is 1
+                        return (num2 == num1 + 1 && num3 == num2 + 1);
+                    }
+                                                
+                    public static void main(String[] args) {
+                        // Example usage:
+                        int num1 = 4;
+                        int num2 = 5;
+                        int num3 = 6;
+                                                
+                        System.out.println("Are " + num1 + ", " + num2 + ", and " + num3 + " consecutive? " + areConsecutive(num1, num2, num3));
+                    }
+                }  
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    Are 4, 5, and 6 consecutive? true
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

@@ -51,18 +51,72 @@
             <h3 class="main">Java Basics</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p48. Java Program To Calculate Batting Average></p48>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                  
+                    class Calculate_Compound_Interest{
+
+                    double formula(double p, double r, double t){
+    
+                    double CI = p*(Math.pow((1+r/100),t));
+    
+                    return CI;
+    
+                    }
+    
+                    }
+    
+    
+                    class CompoundInterest{
+    
+                    public static void main(String args[]) {
+    
+                    double p;
+    
+                    double r;
+    
+                    double t;
+    
+                    java.util.Scanner Input = new java.util.Scanner(System.in);
+    
+                    System.out.print("Enter principle: ");
+    
+                    p = Input.nextDouble();
+    
+                    System.out.print("\nEnter Rate: ");
+    
+                    r = Input.nextDouble();
+    
+                    System.out.print("\nEnter Time(In Year): ");
+    
+                    t = Input.nextDouble();
+    
+    
+                    System.out.println("Principle is "+p+" , "+"Rate is "+r+" and time is "+t);
+    
+    
+                    Calculate_Compound_Interest CI = new Calculate_Compound_Interest();
+    
+                    double ans = CI.formula(p,r,t);
+    
+                    System.out.println("Compound Interest: "+ans);
+    
+                    }
+    
+                    }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    Enter principle: 10
+
+    Enter Rate: 10000
+
+    Enter Time(In Year): 2
+
+    Principle is 10.0 , Rate is 10000.0 and time is 2.0
+
+    Compound Interest: 102010.0
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

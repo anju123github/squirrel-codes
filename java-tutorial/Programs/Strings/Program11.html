@@ -48,21 +48,39 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Strings</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>11. Program to Convert Enum to String</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+// Define an enum type
+enum Color {
+ RED, GREEN, BLUE
+}
+public class EnumToStringExample {
+
+    public static void main(String[] args) {
+        // Convert Enum to String
+        Color color = Color.RED;
+        String colorString = enumToString(color);
+
+        // Print the output
+        System.out.println("Enum: " + color);
+        System.out.println("Converted String: " + colorString);
+    }
+
+    // Method to convert Enum to String
+    private static String enumToString(Enum enumeration) {
+        return enumeration.name();
     }
 }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    Enum: RED
+    Converted String: RED
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

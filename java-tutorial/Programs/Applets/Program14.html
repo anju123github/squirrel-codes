@@ -48,21 +48,51 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Applets</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>14. Create an applet to display a digital clock.</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+import java.awt.*;
+import java.applet.Applet;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+public class pro14 extends Applet {
+    DateFormat dateFormat;
+    Date date;
+    Thread t;
+    public void init() {
+        this.setSize(300,200);
+    }
+    public void paint(Graphics g)
+    {
+        try
+        {
+            Font f=new Font("Arial",Font.BOLD,50);
+            g.setFont(f);
+            g.setColor(Color.DARK_GRAY);
+            dateFormat = new SimpleDateFormat("hh:mm:ss a");
+            date = new Date();
+            g.drawString(dateFormat.format(date),5,100);
+            Font f1=new Font("Arial",Font.BOLD,10);
+            g.setFont(f1);
+            t.sleep(1000);
+            repaint();
+        }catch(Exception e)
+        {
+        
+        }
     }
 }
+/*   
+    */ 
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    <img src="14.png">
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

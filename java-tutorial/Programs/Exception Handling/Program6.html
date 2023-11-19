@@ -48,21 +48,79 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Exception Handling</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>6. Write a Java program that reads a list of integers from the user and throws an exception if any numbers are duplicates</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Scanner;
+import java.util.Set;
+                                        
+public class DuplicateNumberCheck {
+    public static void main(String[] args) {
+        try {
+            List numbers = readNumbersFromUser();
+            checkDuplicateNumbers(numbers);
+            System.out.println("No duplicate numbers found.");
+        } catch (DuplicateNumberException e) {
+            System.out.println("Error: Duplicate number detected - " + e.getMessage());
+        }
+    }
+                                        
+    private static List readNumbersFromUser() {
+        Scanner scanner = new Scanner(System.in);
+        List numbers = new ArrayList<>();
+                                        
+        System.out.print("Enter the number of integers: ");
+        int count = scanner.nextInt();
+                                        
+        System.out.println("Enter the integers:");
+                                        
+        for (int i = 0; i < count; i++) {
+            int number = scanner.nextInt();
+            numbers.add(number);
+        }
+                                        
+        return numbers;
+    }
+                                        
+    private static void checkDuplicateNumbers(List numbers) throws DuplicateNumberException {
+        Set uniqueNumbers = new HashSet<>();
+        for (int number : numbers) {
+            if (!uniqueNumbers.add(number)) {
+                throw new DuplicateNumberException("Duplicate number found: " + number);
+            }
+        }
     }
 }
+                                        
+class DuplicateNumberException extends Exception {
+    public DuplicateNumberException(String message) {
+        super(message);
+    }
+}   
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Enter the number of integers: 5 
+
+Enter the integers: 
+
+1 
+
+2 
+
+3 
+
+2 
+
+4 
+
+Error: Duplicate number detected - Duplicate number found: 2 
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

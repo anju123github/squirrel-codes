@@ -48,21 +48,43 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Data Conversion</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>14. How to convert Object to String</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                public class ObjectToStringConversion {
+                    public static void main(String[] args) {
+                        // Convert Object to String using toString() method
+                        Object objValue = new MyObject("Hello, World!");
+                
+                        // Print the results
+                        System.out.println("Original Object: " + objValue);
+                        System.out.println("Converted to String: " + objValue.toString());
+                    }
+                
+                    // Define a custom class
+                    static class MyObject {
+                        private String value;
+                
+                        public MyObject(String value) {
+                            this.value = value;
+                        }
+                
+                        @Override
+                        public String toString() {
+                            return "MyObject{" +
+                                    "value='" + value + '\'' +
+                                    '}';
+                        }
+                    }
+                }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    Original Object: MyObject{value='Hello, World!'}
+    Converted to String: MyObject{value='Hello, World!'}
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

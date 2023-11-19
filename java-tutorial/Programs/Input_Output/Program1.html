@@ -48,21 +48,52 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Input_output</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>1. Enter the character from user using InputStreamReader</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class ReadCharFromUser {
+    public static void main(String[] args) {
+        // Create an InputStreamReader to read characters from the console
+        InputStreamReader inputStreamReader = new InputStreamReader(System.in);
+
+        // Wrap the InputStreamReader with BufferedReader for easier reading
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+        try {
+            // Prompt the user to enter a character
+            System.out.print("Enter a character: ");
+
+            // Read a single character from the user
+            char userInput = (char) bufferedReader.read();
+
+            // Print the entered character
+            System.out.println("You entered: " + userInput);
+        } catch (IOException e) {
+            System.err.println("Error reading input: " + e.getMessage());
+        } finally {
+            try {
+                // Close the BufferedReader
+                bufferedReader.close();
+            } catch (IOException e) {
+                System.err.println("Error closing BufferedReader: " + e.getMessage());
+            }
+        }
     }
-}
+} 
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Enter a character: A
+
+You entered: A
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

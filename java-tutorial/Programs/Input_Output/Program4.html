@@ -48,21 +48,43 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Input_output</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>4. Enter the float from user using Scanner class</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+import java.util.Scanner;
+
+public class ReadFloatFromUser {
+    public static void main(String[] args) {
+        // Create a Scanner object to read input from the console
+        Scanner scanner = new Scanner(System.in);
+                                
+        try {
+            // Prompt the user to enter a float
+            System.out.print("Enter a float: ");
+                                
+            // Read the float from the user
+            float userInput = scanner.nextFloat();
+                                
+            // Print the entered float
+            System.out.println("You entered: " + userInput);
+        } catch (java.util.InputMismatchException e) {
+            System.err.println("Error: Please enter a valid float.");
+        } finally {
+            // Close the Scanner
+            scanner.close();
+        }
     }
 }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    Enter a float: 3.14 
+
+    You entered: 3.14
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

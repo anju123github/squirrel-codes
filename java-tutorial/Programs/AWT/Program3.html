@@ -48,21 +48,51 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">AWT</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>3. Create a simple AWT application that displays multiple buttons with BorderLayout manager (North, East, West, South, Center).</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                
+            import java.awt.BorderLayout;
+            import java.awt.Button;
+            import java.awt.Frame;
+            
+            class AWTButtonExample {
+                public static void main(String[] args) {
+                    Frame frame = new Frame("AWT Button Example");
+            
+                   
+                    Button northButton = new Button("North");
+                    Button eastButton = new Button("East");
+                    Button westButton = new Button("West");
+                    Button southButton = new Button("South");
+                    Button centerButton = new Button("Center");
+            
+                   
+                    frame.add(northButton, BorderLayout.NORTH);
+                    frame.add(eastButton, BorderLayout.EAST);
+                    frame.add(westButton, BorderLayout.WEST);
+                    frame.add(southButton, BorderLayout.SOUTH);
+                    frame.add(centerButton, BorderLayout.CENTER);
+            
+                    
+                    frame.setSize(400, 300);
+                    frame.setVisible(true);
+            
+                   
+                    frame.addWindowListener(new java.awt.event.WindowAdapter() {
+                        public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                            System.exit(0);
+                        }
+                    });
+                }
+            } 
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    <img src="3.png">
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

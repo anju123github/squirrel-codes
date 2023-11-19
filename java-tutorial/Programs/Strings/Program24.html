@@ -48,21 +48,49 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Strings</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>24. Program to find the duplicate characters in a string</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+import java.util.HashMap;
+import java.util.Map;
+
+public class DuplicateCharacters {
+    public static void main(String[] args) {
+        String inputString = "programming";
+
+        // Calling the method to find duplicate characters
+        findDuplicateCharacters(inputString);
+    }
+
+    public static void findDuplicateCharacters(String str) {
+        // Creating a map to store character frequencies
+        Map charFrequencyMap = new HashMap<>();
+
+        // Populating the map with character frequencies
+        for (char c : str.toCharArray()) {
+            charFrequencyMap.put(c, charFrequencyMap.getOrDefault(c, 0) + 1);
+        }
+
+        // Displaying duplicate characters
+        System.out.println("Input String: " + str);
+        System.out.print("Duplicate Characters: ");
+
+        for (Map.Entry entry : charFrequencyMap.entrySet()) {
+            if (entry.getValue() > 1) {
+                System.out.print(entry.getKey() + " ");
+            }
+        }
     }
 }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    Input String: programming
+    Duplicate Characters: r g m
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

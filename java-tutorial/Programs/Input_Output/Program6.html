@@ -48,21 +48,46 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Input_output</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>6. Enter the boolean from user using Scanner class</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+import java.util.Scanner;
+
+public class ReadBooleanFromUser {
+    public static void main(String[] args) {
+        // Create a Scanner object to read input from the console
+        Scanner scanner = new Scanner(System.in);
+                                
+        try {
+            // Prompt the user to enter a boolean (true or false)
+            System.out.print("Enter a boolean (true or false): ");
+                                
+            // Read the boolean as a String
+            String userInput = scanner.nextLine().toLowerCase(); // Convert to lowercase for case-insensitive comparison
+                                
+            // Parse the String to a boolean
+            boolean parsedBoolean = Boolean.parseBoolean(userInput);
+                                
+            // Print the entered boolean
+            System.out.println("You entered: " + parsedBoolean);
+        } catch (Exception e) {
+            System.err.println("Error: Please enter a valid boolean.");
+        } finally {
+            // Close the Scanner
+            scanner.close();
+        }
     }
 }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Enter a character: A
+
+You entered: A
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

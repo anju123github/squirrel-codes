@@ -48,21 +48,79 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Functions</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>9. Write a Java method to find all twin prime numbers less than 100.</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                
+                public class TwinPrimeFinder {
+
+                    // Method to check if a number is prime
+                    private static boolean isPrime(int num) {
+                        if (num < 2) {
+                            return false;
+                        }
+                        for (int i = 2; i <= Math.sqrt(num); i++) {
+                            if (num % i == 0) {
+                                return false;
+                            }
+                        }
+                        return true;
+                    }
+                
+                    // Method to find all twin prime numbers less than 100
+                    public static void findTwinPrimes() {
+                        System.out.println("Twin Prime Numbers less than 100:");
+                
+                        for (int i = 3; i < 100; i++) {
+                            // Check if i and i+2 are both prime (twin prime condition)
+                            if (isPrime(i) && isPrime(i + 2)) {
+                                System.out.println("(" + i + ", " + (i + 2) + ")");
+                            }
+                        }
+                    }
+                
+                    public static void main(String[] args) {
+                        // Example usage:
+                        findTwinPrimes();
+                    }
+                }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Twin Prime Numbers less than 100: 
+
+(3, 5) 
+
+(5, 7) 
+
+(11, 13) 
+
+(17, 19) 
+
+(29, 31) 
+
+(41, 43) 
+
+(59, 61) 
+
+(71, 73) 
+
+(101, 103) 
+
+(107, 109) 
+
+(137, 139) 
+
+(149, 151) 
+
+(179, 181) 
+
+(191, 193) 
+
+(197, 199)
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

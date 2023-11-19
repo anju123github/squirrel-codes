@@ -48,21 +48,115 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">OOPs</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>16. Write a Java program to create a class called "Shape" with abstract methods for calculating area and perimeter, and subclasses for "Rectangle", "Circle", and "Triangle".</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+abstract class Shape {
+    // Abstract methods for calculating area and perimeter
+    public abstract double calculateArea();
+    public abstract double calculatePerimeter();
+}
+
+class Rectangle extends Shape {
+    private double length;
+    private double width;
+
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    @Override
+    public double calculateArea() {
+        return length * width;
+    }
+
+    @Override
+    public double calculatePerimeter() {
+        return 2 * (length + width);
+    }
+}
+
+class Circle extends Shape {
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+
+    @Override
+    public double calculatePerimeter() {
+        return 2 * Math.PI * radius;
+    }
+}
+
+class Triangle extends Shape {
+    private double side1;
+    private double side2;
+    private double side3;
+
+    public Triangle(double side1, double side2, double side3) {
+        this.side1 = side1;
+        this.side2 = side2;
+        this.side3 = side3;
+    }
+
+    @Override
+    public double calculateArea() {
+        // Using Heron's formula to calculate the area of a triangle
+        double s = (side1 + side2 + side3) / 2;
+        return Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
+    }
+
+    @Override
+    public double calculatePerimeter() {
+        return side1 + side2 + side3;
+    }
+}
+
+public class ShapeTest {
+    public static void main(String[] args) {
+        // Create instances of different shapes
+        Rectangle rectangle = new Rectangle(5, 7);
+        Circle circle = new Circle(3);
+        Triangle triangle = new Triangle(4, 5, 6);
+
+        // Display information about each shape
+        displayShapeInfo(rectangle);
+        displayShapeInfo(circle);
+        displayShapeInfo(triangle);
+    }
+
+    private static void displayShapeInfo(Shape shape) {
+        System.out.println("Shape Type: " + shape.getClass().getSimpleName());
+        System.out.println("Area: " + shape.calculateArea());
+        System.out.println("Perimeter: " + shape.calculatePerimeter());
+        System.out.println();
     }
 }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Shape Type: Rectangle
+Area: 35.0
+Perimeter: 24.0
+
+Shape Type: Circle
+Area: 28.274333882308138
+Perimeter: 18.84955592153876
+
+Shape Type: Triangle
+Area: 9.921567416492215
+Perimeter: 15.0
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

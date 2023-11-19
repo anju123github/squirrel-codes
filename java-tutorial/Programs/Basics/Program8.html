@@ -51,18 +51,39 @@
             <h3 class="main">Java Basics</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>8. Write a Java program to convert a binary number to decimal number</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                
+                class BinaryToDecimal
+
+                {
+
+                public static void main(String argsp[]) throws NumberFormatException
+
+                {
+
+                java.util.Scanner sc = new java.util.Scanner(System.in);
+
+                System.out.print("Enter your binary number : ");
+
+                String binary=sc.next();
+
+
+                int decimal=Integer.parseInt(binary,2);
+
+
+                System.out.println("Decimal number for Binary "+binary+" is "+decimal);
+
+                }
+
+                }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    Enter your binary number : 1001001 
+
+    Decimal number for Binary 1001001 is 73
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

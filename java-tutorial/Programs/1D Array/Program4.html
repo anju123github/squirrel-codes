@@ -48,21 +48,43 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">1D Array</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>4. Program to print the duplicate elements of an array</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+import java.util.HashMap;
+import java.util.Map;
+                                        
+public class DuplicateElementsExample {
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3, 4, 1, 2, 5, 3, 2, 1};
+                                        
+        // Create a map to store element frequencies
+        Map frequencyMap = new HashMap<>();
+                                        
+        System.out.println("Duplicate Elements:");
+        // Iterate through the array and print duplicates
+        for (int element : array) {
+            frequencyMap.put(element, frequencyMap.getOrDefault(element, 0) + 1);
+            if (frequencyMap.get(element) == 2) {
+                System.out.println(element);
+            }
+        }
     }
-}
+}   
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Duplicate Elements: 
+
+1 
+
+2 
+
+3
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

@@ -48,21 +48,83 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Multithreading</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>2. Write a Java program that creates two threads to find and print even and odd numbers from 1 to 20.</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                
+
+                class EvenOddPrinter extends Thread {
+                    private final int start;
+                    private final int end;
+                
+                    public EvenOddPrinter(int start, int end) {
+                        this.start = start;
+                        this.end = end;
+                    }
+                
+                    @Override
+                    public void run() {
+                        if (start % 2 == 0) {
+                            printEven();
+                        } else {
+                            printOdd();
+                        }
+                    }
+                
+                    private void printEven() {
+                        for (int i = start; i <= end; i += 2) {
+                            System.out.println(Thread.currentThread().getName() + ": " + i);
+                        }
+                    }
+                
+                    private void printOdd() {
+                        for (int i = start; i <= end; i += 2) {
+                            System.out.println(Thread.currentThread().getName() + ": " + i);
+                        }
+                    }
+                }
+                
+                public class EvenOddThreadExample {
+                    public static void main(String[] args) {
+                        int start = 1;
+                        int end = 20;
+                
+                        EvenOddPrinter evenPrinter = new EvenOddPrinter(start, end);
+                        EvenOddPrinter oddPrinter = new EvenOddPrinter(start + 1, end);
+                
+                        Thread evenThread = new Thread(evenPrinter, "EvenThread");
+                        Thread oddThread = new Thread(oddPrinter, "OddThread");
+                
+                        evenThread.start();
+                        oddThread.start();
+                    }
+                }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+EvenThread: 2
+OddThread: 1
+EvenThread: 4
+OddThread: 3
+EvenThread: 6
+OddThread: 5
+EvenThread: 8
+OddThread: 7
+EvenThread: 10
+OddThread: 9
+EvenThread: 12
+OddThread: 11
+EvenThread: 14
+OddThread: 13
+EvenThread: 16
+OddThread: 15
+EvenThread: 18
+OddThread: 17
+EvenThread: 20
+OddThread: 19
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

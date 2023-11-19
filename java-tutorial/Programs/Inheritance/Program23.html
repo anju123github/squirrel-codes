@@ -48,21 +48,85 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Inheritance</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>23. Write a Java program to create an abstract class Instrument with abstract methods play() and tune(). Create subclasses for Glockenspiel and Violin that extend the Instrument class and implement the respective methods to play and tune each instrument.</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+// Abstract class Instrument
+abstract class Instrument {
+    // Abstract methods
+    public abstract void play();
+    public abstract void tune();
+}
+                                        
+// Subclass Glockenspiel extending Instrument
+class Glockenspiel extends Instrument {
+    // Implementing the play method for Glockenspiel
+    
+    public void play() {
+        System.out.println("Glockenspiel plays melodious tunes");
+    }
+                                        
+    // Implementing the tune method for Glockenspiel
+    
+    public void tune() {
+        System.out.println("Glockenspiel is tuned by adjusting metal bars");
     }
 }
+                                        
+// Subclass Violin extending Instrument
+class Violin extends Instrument {
+    // Implementing the play method for Violin
+    
+    public void play() {
+        System.out.println("Violin produces beautiful string sounds");
+    }
+                                        
+    // Implementing the tune method for Violin
+    
+    public void tune() {
+        System.out.println("Violin is tuned by adjusting the tension of the strings");
+    }
+}
+                                        
+// Main class
+public class AbstractInstrumentExample {
+    public static void main(String[] args) {
+        // Create instances of Glockenspiel and Violin
+        Glockenspiel glockenspiel = new Glockenspiel();
+        Violin violin = new Violin();
+                                        
+        // Play and tune the instruments
+        System.out.println("Glockenspiel:");
+        glockenspiel.play();
+        glockenspiel.tune();
+                                        
+        System.out.println(); // Empty line for clarity
+                                        
+        System.out.println("Violin:");
+        violin.play();
+        violin.tune();
+    }
+} 
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Glockenspiel: 
+
+Glockenspiel plays melodious tunes 
+
+Glockenspiel is tuned by adjusting metal bars 
+
+ 
+
+Violin: 
+
+Violin produces beautiful string sounds 
+
+Violin is tuned by adjusting the tension of the strings 
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

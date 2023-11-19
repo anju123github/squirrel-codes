@@ -48,21 +48,101 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Inheritance</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>20. Write a Java program to create an abstract class Shape3D with abstract methods calculateVolume() and calculateSurfaceArea(). Create subclasses Sphere and Cube that extend the Shape3D class and implement the respective methods to calculate the volume and surface area of each</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+// Abstract class Shape3D
+abstract class Shape3D {
+    // Abstract methods
+    public abstract double calculateVolume();
+    public abstract double calculateSurfaceArea();
+}
+                                        
+// Subclass Sphere extending Shape3D
+class Sphere extends Shape3D {
+    // Property specific to Sphere
+    private double radius;
+                                        
+    // Constructor for Sphere
+    public Sphere(double radius) {
+        this.radius = radius;
+    }
+                                        
+    // Implementing the calculateVolume method for Sphere
+    
+    public double calculateVolume() {
+        return (4.0 / 3.0) * Math.PI * Math.pow(radius, 3);
+    }
+                                        
+    // Implementing the calculateSurfaceArea method for Sphere
+    
+    public double calculateSurfaceArea() {
+        return 4.0 * Math.PI * Math.pow(radius, 2);
     }
 }
+                                        
+// Subclass Cube extending Shape3D
+class Cube extends Shape3D {
+    // Property specific to Cube
+    private double sideLength;
+                                        
+    // Constructor for Cube
+    public Cube(double sideLength) {
+        this.sideLength = sideLength;
+    }
+                                        
+    // Implementing the calculateVolume method for Cube
+    
+    public double calculateVolume() {
+        return Math.pow(sideLength, 3);
+    }
+                                        
+    // Implementing the calculateSurfaceArea method for Cube
+    
+    public double calculateSurfaceArea() {
+        return 6.0 * Math.pow(sideLength, 2);
+    }
+}
+                                        
+// Main class
+public class AbstractShape3DExample {
+    public static void main(String[] args) {
+        // Create instances of Sphere and Cube
+        Sphere sphere = new Sphere(5.0);
+        Cube cube = new Cube(4.0);
+                                        
+        // Display volume and surface area for Sphere and Cube
+        System.out.println("Sphere:");
+        System.out.println("Volume: " + sphere.calculateVolume());
+        System.out.println("Surface Area: " + sphere.calculateSurfaceArea());
+                                        
+        System.out.println(); // Empty line for clarity
+                                        
+        System.out.println("Cube:");
+        System.out.println("Volume: " + cube.calculateVolume());
+        System.out.println("Surface Area: " + cube.calculateSurfaceArea());
+    }
+}  
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Sphere: 
+
+Volume: 523.5987755982989 
+
+Surface Area: 314.1592653589793 
+
+ 
+
+Cube: 
+
+Volume: 64.0 
+
+Surface Area: 96.0 
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

@@ -51,18 +51,40 @@
             <h3 class="main">Java Basics</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>2. Write a Java program to print the sum of two numbers</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+import java.util.Scanner;
+
+public class SumOfTwoNumbers {
+    public static void main(String[] args) {
+        // Create a Scanner object to read input
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter the first number
+        System.out.print("Enter the first number: ");
+        double num1 = scanner.nextDouble();
+
+        // Prompt the user to enter the second number
+        System.out.print("Enter the second number: ");
+        double num2 = scanner.nextDouble();
+
+        // Calculate the sum
+        double sum = num1 + num2;
+
+        // Display the result
+        System.out.println("The sum of " + num1 + " and " + num2 + " is: " + sum);
+
+        // Close the scanner
+        scanner.close();
     }
 }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Enter the first number: 10.5
+Enter the second number: 20.3
+The sum of 10.5 and 20.3 is: 30.8
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

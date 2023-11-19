@@ -48,21 +48,35 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Strings</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>37. Program to remove all the white spaces from a string</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                public class RemoveWhiteSpaces {
+                    public static void main(String[] args) {
+                        String inputString = "  This is a sample   string with   spaces.  ";
+                
+                        // Calling the method to remove white spaces
+                        String stringWithoutSpaces = removeWhiteSpaces(inputString);
+                
+                        // Displaying the result
+                        System.out.println("Input String: " + inputString);
+                        System.out.println("String without Spaces: " + stringWithoutSpaces);
+                    }
+                
+                    public static String removeWhiteSpaces(String str) {
+                        // Using regex to replace all white spaces with an empty string
+                        return str.replaceAll("\\s", "");
+                    }
+                }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Input String:   This is a sample   string with   spaces.  
+String without Spaces: Thisisasamplestringwithspaces.
+
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

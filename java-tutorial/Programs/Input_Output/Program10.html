@@ -48,21 +48,83 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Input_output</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>10. Get all characters from the file, count number of lines, words, characters and display on the screen</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+                                
+public class ReadFileStatistics {
+    public static void main(String[] args) {
+        // Specify the path to your file
+        String filePath = "path/to/your/file.txt";
+                                
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            int charCode;
+            int charCount = 0;
+            int wordCount = 0;
+            int lineCount = 0;
+                                
+            // Read characters until the end of the file
+            while ((charCode = reader.read()) != -1) {
+                char character = (char) charCode;
+                                
+                // Count characters
+                charCount++;
+                                
+                // Count words and lines
+                if (Character.isWhitespace(character)) {
+                    wordCount++;
+                }
+                if (character == '\n') {
+                    lineCount++;
+                }
+                                
+                System.out.print(character);
+            }
+                                
+            // Check for the last word (since the last word may not end with whitespace)
+            if (charCount > 0) {
+                wordCount++;
+            }
+                                
+            // Check for the last line
+            if (charCount > 0 && charCode != -1) {
+                lineCount++;
+            }
+                                
+            // Display statistics
+            System.out.println("\n\nStatistics:");
+            System.out.println("Number of characters: " + charCount);
+            System.out.println("Number of words: " + wordCount);
+            System.out.println("Number of lines: " + lineCount);
+                                
+        } catch (IOException e) {
+            System.err.println("Error reading the file: " + e.getMessage());
+        }
     }
-}
+}  
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Hello, World!
+
+This is a sample file.
+
+
+
+Statistics:
+
+Number of characters: 37
+
+Number of words: 9
+
+Number of lines: 2
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

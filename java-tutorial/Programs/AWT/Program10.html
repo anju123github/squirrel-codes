@@ -48,21 +48,51 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">AWT</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>10. Create a simple AWT application that displays a Choice with FlowLayout manager.</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                
+                // importing awt class  
+                import java.awt.*;   
+                class a {    
+                  
+                         // class constructor  
+                        a() {    
+                  
+                        // creating a frame  
+                        Frame f = new Frame();    
+                  
+                        // creating a choice component  
+                        Choice c = new Choice();   
+                  
+                        // adding items to the choice menu  
+                        c.add("Item 1");    
+                        c.add("Item 2");    
+                        c.add("Item 3");    
+                        c.add("Item 4");    
+                        c.add("Item 5");    
+                  
+                        // adding choice menu to frame  
+                        f.add(c);    
+                  
+                        // setting size, layout and visibility of frame  
+                        f.setSize(400, 400);    
+                        f.setVisible(true);    
+                     }    
+                  
+                // main method  
+                public static void main(String args[])    
+                {    
+                   new a();    
+                }    
+                }  
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

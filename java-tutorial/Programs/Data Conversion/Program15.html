@@ -48,21 +48,28 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Data Conversion</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>15. How to convert int to long</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                public class IntToLongConversion {
+                    public static void main(String[] args) {
+                        // Convert int to long
+                        int intValue = 42;
+                        long longValue = intValue;
+                
+                        // Print the results
+                        System.out.println("Original int value: " + intValue);
+                        System.out.println("Converted to long value: " + longValue);
+                    }
+                }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Original int value: 42
+Converted to long value: 42
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

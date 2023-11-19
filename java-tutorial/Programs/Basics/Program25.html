@@ -51,18 +51,37 @@
             <h3 class="main">Java Basics</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>25. Write a Java program to add two numbers without using any arithmetic operators</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+              
+                class DigitSum{
+
+                    public static void main(String a[]){
+    
+                    int x =1453;
+    
+                    int sum =0;
+    
+                    while(x!=0){
+    
+                    int i=x%10;
+    
+                    sum+=i;
+    
+                    x=x/10;
+    
+                    }
+    
+                    System.out.println(sum);
+    
+                    }
+    
+                    }   
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    13
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

@@ -51,18 +51,31 @@
             <h3 class="main">Java Basics</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>15. Write a Java program to display the system time</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                
+                import java.util.Calendar;
+
+                class CurrentTime{
+
+                public static void main(String a[]){
+
+                Calendar cal = Calendar.getInstance();
+
+                int hour=cal.get(Calendar.HOUR);
+
+                int minute=cal.get(Calendar.MINUTE);
+
+                System.out.println("Current Time is : "+hour+":"+minute);
+
+                }
+
+                }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    Current Time is : 8:24
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

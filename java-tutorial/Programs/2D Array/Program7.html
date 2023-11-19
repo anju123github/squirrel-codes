@@ -48,21 +48,119 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">2D Array</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>7. Program to display the upper triangular matrix</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                import java.util.Scanner;
+
+public class UpperTriangularMatrix {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+                                
+        // Get the size of the square matrix
+        System.out.print("Enter the size of the square matrix: ");
+        int size = scanner.nextInt();
+                                
+        // Create a square matrix
+        int[][] matrix = new int[size][size];
+                                
+        // Get elements for the matrix
+        enterMatrixElements(scanner, matrix);
+                                
+        // Display the upper triangular matrix
+        System.out.println("Original Matrix:");
+        printMatrix(matrix);
+                                
+        System.out.println("Upper Triangular Matrix:");
+        displayUpperTriangularMatrix(matrix);
+                                
+        scanner.close();
     }
-}
+                                
+    // Function to enter matrix elements
+    private static void enterMatrixElements(Scanner scanner, int[][] matrix) {
+        System.out.println("Enter elements for the matrix:");
+                                
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                System.out.print("Enter element at position [" + i + "][" + j + "]: ");
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+    }
+                                
+    // Function to display the upper triangular matrix
+    private static void displayUpperTriangularMatrix(int[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (i <= j) {
+                    System.out.print(matrix[i][j] + " ");
+                } else {
+                    System.out.print("0 ");
+                }
+            }
+            System.out.println(); // Move to the next row
+        }
+    }
+                                
+    // Function to print a matrix
+    private static void printMatrix(int[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println(); // Move to the next row
+        }
+        System.out.println(); // Separate matrices by a blank line
+    }
+} 
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    Enter the size of the square matrix: 3 
+
+    Enter elements for the matrix: 
+
+    Enter element at position [0][0]: 1 
+
+    Enter element at position [0][1]: 2 
+
+    Enter element at position [0][2]: 3 
+
+    Enter element at position [1][0]: 4 
+
+    Enter element at position [1][1]: 5 
+
+    Enter element at position [1][2]: 6 
+
+    Enter element at position [2][0]: 7 
+
+    Enter element at position [2][1]: 8 
+
+    Enter element at position [2][2]: 9 
+
+    
+    
+ Original Matrix: 
+
+    1 2 3  
+
+    4 5 6  
+
+    7 8 9  
+
+    
+    
+ Upper Triangular Matrix: 
+
+    1 2 3  
+
+    0 5 6  
+
+    0 0 9
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

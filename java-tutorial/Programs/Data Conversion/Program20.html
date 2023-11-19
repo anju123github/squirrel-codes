@@ -48,21 +48,30 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Data Conversion</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>20. How to convert int to char</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                public class IntToCharConversion {
+                    public static void main(String[] args) {
+                        // Sample integer value
+                        int intValue = 65; // ASCII value of 'A'
+                
+                        // Convert int to char
+                        char charValue = (char) intValue;
+                
+                        // Display the result
+                        System.out.println("Integer value: " + intValue);
+                        System.out.println("Char value: " + charValue);
+                    }
+                }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Integer value: 65
+Char value: A
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

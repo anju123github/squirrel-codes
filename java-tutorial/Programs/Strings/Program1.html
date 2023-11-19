@@ -48,21 +48,48 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Strings</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>1.Program to Check if a String contains only digits?</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+           
+import java.util.Scanner;
+public class CheckDigitsInString {
+    public static void main(String[] args) {
+        // Get input from the user
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String userInput = scanner.nextLine();
+                
+        // Check if the string contains only digits and print the result
+        if (containsOnlyDigits(userInput)) {
+            System.out.println("The string contains only digits.");
+        } else {
+            System.out.println("The string does not contain only digits.");
+        }
     }
-}
+                
+    // Function to check if a string contains only digits
+    private static boolean containsOnlyDigits(String inputString) {
+        // Check each character in the string
+        for (char c : inputString.toCharArray()) {
+            // If any character is not a digit, return false
+            if (!Character.isDigit(c)) {
+                return false;
+            }
+        }
+        // If all characters are digits, return true
+        return true;
+    }
+}          
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    Enter a string: 12345
+
+    The string contains only digits.
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

@@ -48,21 +48,38 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Data Conversion</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>23. How to convert Date to Timestamp</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+import java.sql.Timestamp;
+import java.util.Date;
+
+public class DateToTimestampExample {
+    public static void main(String[] args) {
+        // Create a Date object
+        Date date = new Date();
+
+        // Convert Date to Timestamp using the Timestamp constructor
+        Timestamp timestamp1 = new Timestamp(date.getTime());
+
+        // Convert Date to Timestamp using the getTime() method
+        Timestamp timestamp2 = new Timestamp(date.getTime());
+
+        // Display the results
+        System.out.println("Original Date: " + date);
+        System.out.println("Converted Timestamp (using constructor): " + timestamp1);
+        System.out.println("Converted Timestamp (using getTime()): " + timestamp2);
     }
 }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Original Date: Thu Nov 18 12:34:56 UTC 2023
+Converted Timestamp (using constructor): 2023-11-18 12:34:56.789
+Converted Timestamp (using getTime()): 2023-11-18 12:34:56.789
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

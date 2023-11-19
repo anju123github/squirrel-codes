@@ -48,21 +48,47 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Applets</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>13. Create an applet in Java to set font.</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                
+import java.awt.*;    
+import java.applet.*;    
+    public class pro13 extends Applet    
+ {    
+   Font f1,f2,f3;    
+    
+   public void  init()    
+    {    
+       f1 = new Font("Arial",Font.BOLD,18);    
+       f2 = new Font("Forte",Font.PLAIN,24);    
+       f3 = new Font("Elephant",Font.ITALIC,28);    
+    }    
+          
+   public void  paint(Graphics g)    
+   {    
+      g.drawString("Welcome",50,50);    
+    
+      g.setFont(f1);     
+      g.drawString("to ",50,80);    
+    
+      g.setFont(f2);     
+      g.drawString("My ",50,110);    
+    
+      g.setFont(f3);     
+      g.drawString("Website",50,140);    
+   }    
+ }    
+    
+/*   
+    */
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    <img src="13.png">
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

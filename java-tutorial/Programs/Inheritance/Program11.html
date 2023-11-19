@@ -48,21 +48,76 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Inheritance</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>11. Create a program, showing an example of super keyword</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                // Base class Animal
+                class Animal {
+                    // Property
+                    protected String name;
+                                                        
+                    // Constructor
+                    public Animal(String name) {
+                        this.name = name;
+                    }
+                                                        
+                    // Method
+                    public void eat() {
+                        System.out.println("Animal is eating");
+                    }
+                }
+                                                        
+                // Subclass Dog extending Animal
+                class Dog extends Animal {
+                    // Additional property
+                    private String breed;
+                                                        
+                    // Constructor
+                    public Dog(String name, String breed) {
+                        // Call the constructor of the parent class using super
+                        super(name);
+                        this.breed = breed;
+                    }
+                                                        
+                    // Method overriding the eat method in the parent class
+                    
+                    public void eat() {
+                        // Call the eat method of the parent class using super
+                        super.eat();
+                        System.out.println("Dog is eating");
+                    }
+                                                        
+                    // Method specific to Dog
+                    public void bark() {
+                        System.out.println("Dog is barking");
+                    }
+                }
+                                                        
+                // Main class
+                public class SuperKeywordExample {
+                    public static void main(String[] args) {
+                        // Create an instance of Dog
+                        Dog myDog = new Dog("Buddy", "Golden Retriever");
+                
+                        // Access properties and methods using the instance of Dog
+                        System.out.println("Dog's name: " + myDog.name); // Accessing property from the parent class
+                        myDog.eat(); // Calling the overridden eat method in the subclass
+                        myDog.bark(); // Calling the method specific to Dog
+                    }
+                }    
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Dog's name: Buddy 
+
+Animal is eating 
+
+Dog is eating 
+
+Dog is barking
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

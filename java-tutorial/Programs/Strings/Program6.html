@@ -48,21 +48,28 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Strings</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>6. Program to insert the string using StringBuffer class.</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+public class InsertStringBuffer {
+    public static void main(String[] args) {
+        // Create a StringBuffer object
+        StringBuffer stringBuffer = new StringBuffer("Hello!");
+
+        // Insert a string at a specific position
+        stringBuffer.insert(6, " Beautiful");
+        // Display the result
+        System.out.println("Inserted String: " + stringBuffer.toString());
     }
 }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    Inserted String: Hello Beautiful!
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

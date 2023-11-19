@@ -48,21 +48,44 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Delegation-event-model</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>17. Java Program to Change the Applet Background Colour when Button Clicked</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+import java.applet.*;
+import java.awt.*;
+import java.awt.event.*;
+public class pro17 extends Applet implements ActionListener {
+  Button b1;
+    Color[] c = { Color.RED, Color.GREEN, Color.BLUE, Color.YELLOW };
+    int bgcolor = 0;
+
+    @Override
+    public void init() {
+        b1 = new Button("Change Color");
+        b1.addActionListener(this);
+        add(b1);
     }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (bgcolor < c.length - 1) {
+            bgcolor++;
+        } else {
+            bgcolor = 0;
+        }
+        setBackground(c[bgcolor]);
+    }
+
 }
+//
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    <img src="j17.png">
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

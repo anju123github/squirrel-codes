@@ -51,18 +51,84 @@
             <h3 class="main">Java Basics</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>22. Write a Java program to count the number of even and odd elements in a given array</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                
+                import java.util.Scanner;
+
+                class CountEvenOdd{
+
+                public static void main(String[] args) {
+
+                Scanner scanner = new Scanner(System.in);
+
+
+                System.out.print("Enter the size of the array: ");
+
+                int size = scanner.nextInt();
+
+
+                int[] arr = new int[size];
+
+
+                System.out.println("Enter the elements of the array:");
+
+                for (int i = 0; i < size; i++) {
+
+                arr[i] = scanner.nextInt();
+
+                }
+
+
+                int even = 0;
+
+                int odd = 0;
+
+
+
+                for (int i = 0; i < size; i++) {
+
+                if (arr[i] % 2 == 0) {
+
+                even++;
+
+                } else {
+
+                odd++;
+
+                }
+
+                }
+
+                System.out.println("Number of even elements: " + even);
+
+                System.out.println("Number of odd elements: " + odd);
+
+                }
+
+                }
+
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Enter the size of the array: 5
+
+Enter the elements of the array:
+
+1
+
+2
+
+4
+
+6
+
+8
+
+Number of even elements: 4
+
+Number of odd elements: 1
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

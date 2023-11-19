@@ -48,21 +48,42 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Input_output</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>8. Enter the long integer from user using Scanner class</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+import java.util.Scanner;
+
+public class ReadLongFromUser {
+    public static void main(String[] args) {
+        // Create a Scanner object to read input from the console
+        Scanner scanner = new Scanner(System.in);
+                                
+        try {
+            // Prompt the user to enter a long integer
+            System.out.print("Enter a long integer: ");
+                                
+            // Read the long integer from the user
+            long userInput = scanner.nextLong();
+                                
+            // Print the entered long integer
+            System.out.println("You entered: " + userInput);
+        } catch (java.util.InputMismatchException e) {
+            System.err.println("Error: Please enter a valid long integer.");
+        } finally {
+            // Close the Scanner
+            scanner.close();
+        }
     }
 }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Enter a long integer: 123456789012345 
+
+You entered: 123456789012345
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

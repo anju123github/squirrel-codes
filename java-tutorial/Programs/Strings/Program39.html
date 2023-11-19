@@ -48,21 +48,45 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Strings</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>39. Program to replace the spaces of a string with a specific character</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                import java.util.Scanner;
+public class ReplaceSpaces {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input the string
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine();
+
+        // Input the character to replace spaces
+        System.out.print("Enter the character to replace spaces with: ");
+        char replacementChar = scanner.nextLine().charAt(0);
+
+        // Replace spaces with the specified character
+        String resultString = replaceSpaces(inputString, replacementChar);
+
+        // Output the result
+        System.out.println("Original String: " + inputString);
+        System.out.println("Modified String: " + resultString);
+    }
+
+    private static String replaceSpaces(String input, char replacement) {
+        // Using replaceAll to replace spaces with the specified character
+        return input.replaceAll(" ", String.valueOf(replacement));
     }
 }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    Enter a string: Hello World
+    Enter the character to replace spaces with: -
+    Original String: Hello World
+    Modified String: Hello-World
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

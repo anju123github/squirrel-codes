@@ -48,21 +48,43 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Input_output</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>5. Enter the double from user using Scanner class</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+import java.util.Scanner;
+
+public class ReadDoubleFromUser {
+    public static void main(String[] args) {
+        // Create a Scanner object to read input from the console
+        Scanner scanner = new Scanner(System.in);
+                                
+        try {
+            // Prompt the user to enter a double
+            System.out.print("Enter a double: ");
+                                
+            // Read the double from the user
+            double userInput = scanner.nextDouble();
+                                
+            // Print the entered double
+            System.out.println("You entered: " + userInput);
+        } catch (java.util.InputMismatchException e) {
+            System.err.println("Error: Please enter a valid double.");
+        } finally {
+            // Close the Scanner
+            scanner.close();
+        }
     }
 }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    Enter a double: 3.14159 
+
+    You entered: 3.14159 
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

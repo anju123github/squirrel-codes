@@ -48,21 +48,56 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Strings</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>28. Program to find the longest repeating sequence in a string</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+public class LongestRepeatingSequence {
+    public static void main(String[] args) {
+        String inputString = "ABABC";
+
+        // Calling the method to find the longest repeating sequence
+        String longestRepeatingSequence = findLongestRepeatingSequence(inputString);
+
+        // Displaying the result
+        System.out.println("Input String: " + inputString);
+        System.out.println("Longest Repeating Sequence: " + longestRepeatingSequence);
     }
+
+    public static String findLongestRepeatingSequence(String str) {
+       int n = str.length();
+        String result = "";
+
+        // Building a 2D array to store the lengths of the longest common suffixes
+        int[][] dp = new int[n + 1][n + 1];
+
+        // Populating the dp array
+        for (int i = 1; i <= n; i++) {
+            for (int j = i + 1; j <= n; j++) {
+               if (str.charAt(i - 1) == str.charAt(j - 1) && dp[i - 1][j - 1] < (j - i)) {
+                    dp[i][j] = dp[i - 1][j - 1] + 1;
+
+                    if (dp[i][j] > dp[i][n]) {
+                        int len = dp[i][j];
+                        result = str.substring(i - len, i);
+                    }
+                } else {
+                    dp[i][j] = 0;
+                }
+            }
+        }
+
+        return result;
+   }
 }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Input String: ABABC
+Longest Repeating Sequence: AB
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

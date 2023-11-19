@@ -48,21 +48,47 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Data Conversion</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>22. How to convert boolean to String</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+public class BooleanToStringConversion {
+    public static void main(String[] args) {
+        // Example boolean values
+        boolean trueValue = true;
+        boolean falseValue = false;
+
+        // Using String.valueOf()
+        String stringValue1 = String.valueOf(trueValue);
+        String stringValue2 = String.valueOf(falseValue);
+
+        // Using concatenation with an empty string
+        String stringValue3 = trueValue + "";
+        String stringValue4 = falseValue + "";
+
+        // Display the results
+        System.out.println("Using String.valueOf():");
+        System.out.println("trueValue: " + stringValue1);
+        System.out.println("falseValue: " + stringValue2);
+
+        System.out.println("\nUsing concatenation with an empty string:");
+        System.out.println("trueValue: " + stringValue3);
+        System.out.println("falseValue: " + stringValue4);
     }
 }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Using String.valueOf():
+trueValue: true
+falseValue: false
+
+Using concatenation with an empty string:
+trueValue: true
+falseValue: false
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

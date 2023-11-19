@@ -51,18 +51,87 @@
             <h3 class="main">Java Basics</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>12. Write a Java program to count the letters, spaces, numbers and other characters of an input string</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                
+                class TestInput{
+
+                    public static void main(String[] args){
+    
+                    String test = "Aa kiu, I swd skieo 236587. GH kiu: sieo?? 25.33";
+    
+                    System.out.println("The string is : "+test);
+    
+                    count(test);
+    
+                    }
+    
+    
+                    public static void count(String x){
+    
+                    char[] ch = x.toCharArray();
+    
+                    int letter = 0;
+    
+                    int space = 0;
+    
+                    int num = 0;
+    
+                    int other = 0;
+    
+                    for(int i = 0; i < x.length(); i++){
+    
+                    if(Character.isLetter(ch[i])){
+    
+                    letter ++ ;
+    
+                    }
+    
+                    else if(Character.isDigit(ch[i])){
+    
+                    num ++ ;
+    
+                    }
+    
+                    else if(Character.isSpaceChar(ch[i])){
+    
+                    space ++ ;
+    
+                    }
+    
+                    else{
+    
+                    other ++;
+    
+                    }
+    
+                    }
+    
+    
+                    System.out.println("letter: " + letter);
+    
+                    System.out.println("space: " + space);
+    
+                    System.out.println("number: " + num);
+    
+                    System.out.println("other: " + other);
+    
+                    }  
+    
+                    }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+The string is : Aa kiu, I swd skieo 236587. GH kiu: sieo?? 25.33
+
+letter: 23
+
+space: 9
+
+number: 10
+
+other: 6
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

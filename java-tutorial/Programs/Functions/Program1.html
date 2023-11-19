@@ -48,21 +48,45 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Functions</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>1. Write a Java method to find the smallest number among three numbers.</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                public class SmallestNumberFinder {
+
+                    // Method to find the smallest number among three numbers
+                    public static int findSmallestNumber(int num1, int num2, int num3) {
+                        int smallest = num1;
+                                                
+                        if (num2 < smallest) {
+                            smallest = num2;
+                        }
+                                                
+                        if (num3 < smallest) {
+                            smallest = num3;
+                        }
+                                                
+                        return smallest;
+                    }
+                                                
+                    public static void main(String[] args) {
+                        // Example usage:
+                        int num1 = 10;
+                        int num2 = 5;
+                        int num3 = 8;
+                                                
+                        int smallestNumber = findSmallestNumber(num1, num2, num3);
+                                                
+                        System.out.println("The smallest number among " + num1 + ", " + num2 + ", and " + num3 + " is: " + smallestNumber);
+                    }
+                }  
+                
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    The smallest number among 10, 5, and 8 is: 5
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

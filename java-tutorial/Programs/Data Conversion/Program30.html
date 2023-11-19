@@ -48,21 +48,45 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">1D Array1D</h3>
+            <h3 class="main">Data Conversion</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>30. How to convert Decimal to Octal</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+import java.util.Scanner;
+
+public class DecimalToOctalConverter {
+    public static void main(String[] args) {
+        // Create a Scanner object to take user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter a decimal number
+        System.out.print("Enter a decimal number: ");
+        int decimalNumber = scanner.nextInt();
+
+        // Call the method to convert decimal to octal
+        String octalNumber = convertDecimalToOctal(decimalNumber);
+
+        // Display the result
+        System.out.println("Octal equivalent: " + octalNumber);
+
+        // Close the scanner
+        scanner.close();
+    }
+
+    // Method to convert decimal to octal
+    private static String convertDecimalToOctal(int decimalNumber) {
+        // Using Integer.toOctalString() to convert decimal to octal
+        return Integer.toOctalString(decimalNumber);
     }
 }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Enter a decimal number: 42
+Octal equivalent: 52
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

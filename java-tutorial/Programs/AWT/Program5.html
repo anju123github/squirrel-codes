@@ -48,21 +48,43 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">AWT</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>5. Create a simple AWT application that displays a TextField with Custom Layout</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                
+               import java.awt.*;
+               import java.awt.event.*;
+                class a
+                {  
+                   public static void main(String[] x)
+                   {
+                       
+                   Frame  f= new Frame("TextField with custom layout"); //create frame
+                   TextField t1 = new TextField("TextField with custom layout"); //create textfield
+                   t1.setBounds(50, 100, 200, 30); //set dimensions
+                   TextField t2 = new TextField();
+                   t2.setBounds(50, 150, 200, 30); 
+                   f.add(t1);                                        //add textfields into the frame
+                   f.add(t2);   
+                   // setting size, layout and visibility of frame   
+                   f.setSize(400,400);    
+                   f.setLayout(null);    
+                   f.setVisible(true); 
+                   f.addWindowListener(new WindowAdapter() {
+                           public void windowClosing(WindowEvent e) {
+                               System.exit(0);
+                           }
+                       });
+               
+                  }
+               } 
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    <img src="5.PNG">
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

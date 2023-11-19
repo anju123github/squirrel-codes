@@ -48,21 +48,52 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Functions</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>3. Write a Java method to display the middle character of a string. Note: a) If the length of the string is odd there will be two middle characters. b) If the length of the string is even there will be one middle character.</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                public class MiddleCharacterDisplay {
+
+                    // Method to display the middle character(s) of a string
+                    public static String displayMiddleCharacter(String input) {
+                        int length = input.length();
+                
+                        if (length == 0) {
+                            return "String is empty.";
+                        }
+                
+                        int middleIndex = length / 2;
+                
+                        if (length % 2 == 0) {
+                            // String has an even length, so there is one middle character
+                            return "Middle character: " + input.charAt(middleIndex - 1) + input.charAt(middleIndex);
+                        } else {
+                            // String has an odd length, so there are two middle characters
+                            return "Middle character: " + input.charAt(middleIndex);
+                        }
+                    }
+                
+                    public static void main(String[] args) {
+                        // Example usage:
+                        String str1 = "abcde";
+                        String str2 = "abcdef";
+                        String str3 = "";
+                
+                        System.out.println(displayMiddleCharacter(str1));
+                        System.out.println(displayMiddleCharacter(str2));
+                        System.out.println(displayMiddleCharacter(str3));
+                    }
+                }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Middle character: c 
+
+Middle character: de 
+
+String is empty.
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

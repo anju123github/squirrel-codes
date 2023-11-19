@@ -48,21 +48,101 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Multithreading</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>7. Write a Java program that creates a bank account with concurrent deposits and withdrawals using threads.</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+class BankAccount {
+    private double balance;
+
+    public BankAccount(double initialBalance) {
+        this.balance = initialBalance;
+    }
+
+    public synchronized void deposit(double amount) {
+        balance += amount;
+        System.out.println(Thread.currentThread().getName() + " deposited: " + amount);
+        System.out.println("Balance after deposit: " + balance);
+    }
+
+    public synchronized void withdraw(double amount) {
+        if (balance >= amount) {
+            balance -= amount;
+            System.out.println(Thread.currentThread().getName() + " withdrew: " + amount);
+            System.out.println("Balance after withdrawal: " + balance);
+        } else {
+            System.out.println(Thread.currentThread().getName() + " Insufficient funds for withdrawal.");
+        }
+    }
+}
+
+class TransactionThread extends Thread {
+    private BankAccount account;
+    private boolean isDeposit;
+    private double amount;
+
+    public TransactionThread(BankAccount account, boolean isDeposit, double amount) {
+        this.account = account;
+        this.isDeposit = isDeposit;
+        this.amount = amount;
+    }
+
+    @Override
+    public void run() {
+        if (isDeposit) {
+            account.deposit(amount);
+        } else {
+            account.withdraw(amount);
+        }
+    }
+}
+
+public class BankExample {
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount(1000);
+
+        // Create multiple threads for concurrent deposits and withdrawals
+        Thread depositThread1 = new TransactionThread(account, true, 500);
+        Thread withdrawThread1 = new TransactionThread(account, false, 200);
+        Thread depositThread2 = new TransactionThread(account, true, 300);
+        Thread withdrawThread2 = new TransactionThread(account, false, 100);
+
+        // Start the threads
+        depositThread1.start();
+        withdrawThread1.start();
+        depositThread2.start();
+        withdrawThread2.start();
+
+        // Wait for all threads to finish
+        try {
+            depositThread1.join();
+            withdrawThread1.join();
+            depositThread2.join();
+            withdrawThread2.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // Display the final balance
+        System.out.println("Final balance: " + account);
     }
 }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Thread-0 deposited: 500.0
+Balance after deposit: 1500.0
+Thread-1 withdrew: 200.0
+Balance after withdrawal: 1300.0
+Thread-2 deposited: 300.0
+Balance after deposit: 1600.0
+Thread-3 withdrew: 100.0
+Balance after withdrawal: 1500.0
+Final balance: 1500.0
+
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

@@ -51,18 +51,54 @@
             <h3 class="main">Java Basics</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>7. Write a Java program to convert a decimal number to binary numbers</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                
+                class DecimalToBinaryNumber{
+
+                    static void decToBinary(int n)
+    
+                    {
+    
+                    for (int i = 3; i ›= 0; i--) {
+    
+                    int k = n ›› i;
+    
+                    if ((k & 1) › 0)
+    
+                    System.out.print("1");
+    
+                    else
+    
+                    System.out.print("0");
+    
+                    }
+    
+                    }
+    
+    
+                    public static void main(String[] args)
+    
+                    {
+    
+                    int n = 1;
+    
+                    System.out.println("Decimal - " + n);
+    
+                    System.out.print("Binary - ");
+    
+                    decToBinary(n);
+    
+                    }
+    
+                    }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Decimal - 1 
+
+Binary - 0001
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

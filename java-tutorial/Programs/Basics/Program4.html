@@ -51,18 +51,69 @@
             <h3 class="main">Java Basics</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>4. Write a Java program to print the sum, multiply, subtract, divide and remainder of two numbers</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+ class Calculate{
+
+    static int SumTwoNumbers(int a, int b){
+   
+    return (a+b);
+   
     }
-}
+   
+    static int SubstractTwoNumbers(int a, int b){
+   
+    return (a-b);
+   
+    }
+   
+    static int MultiplyTwoNumbers(int a, int b){
+   
+    return (a*b);
+   
+    }
+   
+    static int DivideTwoNumbers(int a, int b){
+   
+    return (a/b);
+   
+    }
+   
+   static int RemainderTwoNumbers(int a, int b){
+   
+    return (a%b);
+   
+    }
+   
+    public static void main(String a[]){
+   
+    System.out.print("Sum of Two numbers: "+ SumTwoNumbers(6,5));
+   
+    System.out.print("\nSubstract of Two numbers: "+ SubstractTwoNumbers(6,5));
+   
+    System.out.print("\nMultiply of Two numbers: "+ MultiplyTwoNumbers(6,5));
+   
+    System.out.print("\nDivide Two numbers: "+ DivideTwoNumbers(6,5));
+   
+    System.out.print("\nRemaider of Two numbers: "+ RemainderTwoNumbers(6,5));
+   
+    }
+   
+    }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Sum of Two numbers: 11 
+
+Substract of Two numbers: 1 
+
+Multiply of Two numbers: 30 
+
+Divide Two numbers: 1 
+
+Remaider of Two numbers: 1pre>
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

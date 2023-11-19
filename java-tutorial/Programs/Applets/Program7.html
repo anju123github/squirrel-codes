@@ -48,21 +48,43 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Applets</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>7. Create an applet in Java to draw a 4 concentric circles.</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+/*Java Applet to Print Concentric Circles using Applet*/
+import java.applet.*;
+import java.awt.*;
+public class pro7 extends Applet
+{
+    //Initialize the applet
+    public void init()
+    {
+	setBackground(Color.yellow);
+    }
+    //Draw cocentric circle
+    public void paint(Graphics g)
+    {
+	g.setColor(Color.red);
+	int rad=25;
+	int dia=50;
+	for(int i=0;i<4;i++)
+	{
+	    g.drawOval(250-(i*rad),250-(i*rad),(i+1)*dia,(i+1)*dia);
+	}
     }
 }
+/*
+
+
+*/
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    <img src="7.png">
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

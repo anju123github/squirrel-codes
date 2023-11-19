@@ -48,21 +48,52 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">OOPs</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>1. Write a Java program to create a class called "Person" with a name and age attribute. Create two instances of the "Person" class, set their attributes using the constructor, and print their name and age.</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                class Person {
+                    private String name;
+                    private int age;
+                
+                    // Constructor to initialize name and age
+                    public Person(String name, int age) {
+                        this.name = name;
+                        this.age = age;
+                    }
+                
+                    // Getter methods
+                    public String getName() {
+                        return name;
+                    }
+                
+                    public int getAge() {
+                        return age;
+                    }
+                }
+                
+                public class PersonExample {
+                    public static void main(String[] args) {
+                        // Create two instances of the Person class
+                        Person person1 = new Person("John Doe", 25);
+                        Person person2 = new Person("Jane Smith", 30);
+                
+                        // Print details of the first person
+                        System.out.println("Person 1 - Name: " + person1.getName() + ", Age: " + person1.getAge());
+                
+                        // Print details of the second person
+                        System.out.println("Person 2 - Name: " + person2.getName() + ", Age: " + person2.getAge());
+                    }
+                }
+                    
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Person 1 - Name: John Doe, Age: 25
+Person 2 - Name: Jane Smith, Age: 30
+
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

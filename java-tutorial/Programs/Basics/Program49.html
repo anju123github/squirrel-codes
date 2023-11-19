@@ -51,18 +51,58 @@
             <h3 class="main">Java Basics</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>49. Java Pogram to Calculate Commission Percentage</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                
+                import java.util.Scanner;
+
+                class calculateBattingAverage{
+
+                public static void main(String[] args) {
+
+                Scanner scanner = new Scanner(System.in);
+
+
+                System.out.println("Enter the total number of hits:");
+
+                int totalHits = scanner.nextInt();
+
+
+                System.out.println("Enter the total number of at-bats:");
+
+                int totalAtBats = scanner.nextInt();
+
+
+                double battingAverage = Average(totalHits, totalAtBats);
+
+                System.out.println("The calculated batting average is: " + battingAverage);
+
+
+                scanner.close();
+
+                }
+
+
+                private static double Average(int totalHits, int totalAtBats) {
+
+                return (double) totalHits / totalAtBats;
+
+                }
+
+                }  
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    Enter the total number of hits:
+
+    7
+
+    Enter the total number of at-bats:
+
+    3
+
+    The calculated batting average is: 2.3333333333333335
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

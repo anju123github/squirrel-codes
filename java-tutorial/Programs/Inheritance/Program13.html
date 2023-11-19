@@ -48,21 +48,72 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Inheritance</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>13. Create a program, showing an example of method overriding</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+// Base class Animal
+class Animal {
+    // Method
+    public void makeSound() {
+        System.out.println("Generic animal sound");
     }
 }
+                                        
+// Subclass Dog extending Animal
+class Dog extends Animal {
+    // Method overriding the makeSound method in the parent class
+    
+    public void makeSound() {
+        System.out.println("Bark! Bark!");
+    }
+                                        
+    // Additional method specific to Dog
+    public void wagTail() {
+        System.out.println("Dog is wagging its tail");
+    }
+}
+                                        
+// Subclass Cat extending Animal
+class Cat extends Animal {
+    // Method overriding the makeSound method in the parent class
+    
+    public void makeSound() {
+        System.out.println("Meow!");
+    }
+                                        
+    // Additional method specific to Cat
+    public void purr() {
+        System.out.println("Cat is purring");
+    }
+}
+                                        
+// Main class
+public class MethodOverridingExample {
+    public static void main(String[] args) {
+        // Create instances of Dog and Cat
+        Dog myDog = new Dog();
+        Cat myCat = new Cat();
+
+        // Call the makeSound method for each instance
+        myDog.makeSound(); // Calls the overridden method in Dog class
+        myDog.wagTail();   // Calls the method specific to Dog class
+
+        System.out.println(); // Empty line for clarity
+
+        myCat.makeSound(); // Calls the overridden method in Cat class
+        myCat.purr();      // Calls the method specific to Cat class
+    }
+}  
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Animal makes a generic sound 
+
+Cat makes a 'Meow' sound
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

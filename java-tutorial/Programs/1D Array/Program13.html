@@ -48,21 +48,59 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">1D Array</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>13. Program to right rotate the elements of an array</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                public class RightRotateArrayExample {
+                    public static void main(String[] args) {
+                        int[] array = {1, 2, 3, 4, 5};
+                        int rotationCount = 2;
+                                                        
+                        System.out.println("Original Array:");
+                        printArray(array);
+                                                        
+                        // Right rotate the array
+                        rightRotateArray(array, rotationCount);
+                                                        
+                        System.out.println("\nArray after Right Rotation:");
+                        printArray(array);
+                    }
+                                                        
+                    private static void rightRotateArray(int[] array, int rotationCount) {
+                        int length = array.length;
+                                                        
+                        // Perform right rotation
+                        for (int i = 0; i < rotationCount; i++) {
+                            int temp = array[length - 1];
+                            for (int j = length - 1; j > 0; j--) {
+                                array[j] = array[j - 1];
+                            }
+                            array[0] = temp;
+                        }
+                    }
+                                                        
+                    private static void printArray(int[] array) {
+                        for (int value : array) {
+                            System.out.print(value + " ");
+                        }
+                    }
+                } 
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Original Array: 
+
+1 2 3 4 5  
+
+ 
+
+Array after Right Rotation: 
+
+4 5 1 2 3  
+
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

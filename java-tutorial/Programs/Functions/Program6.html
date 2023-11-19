@@ -48,21 +48,42 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Functions</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>6. Write a Java method to print characters between two characters (i.e. A to P).</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                public class CharacterPrinter {
+
+                    // Method to print characters between two specified characters
+                    public static void printCharactersBetween(char startChar, char endChar) {
+                        if (startChar > endChar) {
+                            System.out.println("Start character should be less than or equal to end character.");
+                            return;
+                        }
+                                                
+                        for (char ch = startChar; ch <= endChar; ch++) {
+                            System.out.print(ch + " ");
+                        }
+                        System.out.println(); // Move to the next line after printing the characters
+                    }
+                                                
+                    public static void main(String[] args) {
+                        // Example usage:
+                        char startChar = 'A';
+                        char endChar = 'P';
+                                                
+                        System.out.println("Characters between " + startChar + " and " + endChar + ":");
+                        printCharactersBetween(startChar, endChar);
+                    }
+                } 
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    Characters between A and P: 
+
+    A B C D E F G H I J K L M N O P
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

@@ -48,21 +48,35 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Data Conversion</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>10. How to convert Date to String</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+import java.text.SimpleDateFormat;
+import java.util.Date;
+                                
+public class DateToStringConverter {
+                                
+    public static void main(String[] args) {
+        // Example Date object
+        Date currentDate = new Date();
+                                
+        // Define the desired date format
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                                
+        // Convert the Date to a String using the defined format
+        String convertedString = dateFormat.format(currentDate);
+                                
+        // Print the result
+        System.out.println("Converted string: " + convertedString);
     }
-}
+}  
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    Converted string: 2023-11-14
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

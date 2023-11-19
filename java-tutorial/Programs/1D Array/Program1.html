@@ -48,21 +48,37 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">1D Array</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>1. Program to copy all elements of one array into another array</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+public class ArrayCopyExample {
+    public static void main(String[] args) {
+        // Source array
+        int[] sourceArray = {1, 2, 3, 4, 5};
+                                        
+        // Create a destination array with the same length as the source array
+        int[] destinationArray = new int[sourceArray.length];
+                                        
+        // Copy elements from the source array to the destination array
+        for (int i = 0; i < sourceArray.length; i++) {
+            destinationArray[i] = sourceArray[i];
+        }
+                                        
+        // Print the elements of the destination array
+        System.out.print("Destination Array: ");
+        for (int value : destinationArray) {
+            System.out.print(value + " ");
+        }
     }
 }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    Destination Array: 1 2 3 4 5
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

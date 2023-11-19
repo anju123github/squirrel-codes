@@ -48,21 +48,50 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Exception Handling</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>5. Write a Java program that reads a file and throws an exception if the file is empty.</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+                                        
+public class FileNotEmptyCheck {
+    public static void main(String[] args) {
+        try {
+            String fileName = "example.txt"; // Replace with the actual file name
+            checkFileNotEmpty(fileName);
+            System.out.println("File is not empty.");
+        } catch (FileNotFoundException e) {
+            System.out.println("Error: File not found - " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("Error reading the file - " + e.getMessage());
+        } catch (FileEmptyException e) {
+            System.out.println("Error: File is empty - " + e.getMessage());
+        }
+    }
+                                        
+    private static void checkFileNotEmpty(String fileName) throws FileNotFoundException, IOException, FileEmptyException {
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+            if (reader.readLine() == null) {
+                throw new FileEmptyException("File is empty.");
+            }
+        }
     }
 }
+                                        
+class FileEmptyException extends Exception {
+    public FileEmptyException(String message) {
+        super(message);
+    }
+}  
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    File is not empty.
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

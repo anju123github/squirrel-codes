@@ -48,21 +48,46 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Delegation-event-model</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>6. Java Program to Handle MouseEvent</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
+            <pre class="code"><code class="language-java">
+                
+import java.awt.*;
+import java.awt.event.*;
+
+class pro6 extends Frame implements MouseListener{
+Button b1,b2;
+
+pro6(){
+b1= new Button("ok");
+b2= new Button("cancel");
+setLayout(new FlowLayout());
+add(b1); add(b2);
+
+b1.addMouseListener(this);
+
+b2.addMouseListener(this);
+setSize(500,400);
+setVisible(true);
 }
+
+public static void main(String s[]){
+new pro6();
+}
+
+public  void mouseClicked(java.awt.event.MouseEvent me){System.out.println("button clicked");}
+public  void mousePressed(java.awt.event.MouseEvent me){System.out.println("button pressed");}
+public  void mouseReleased(java.awt.event.MouseEvent me){System.out.println("button released");}
+public  void mouseEntered(java.awt.event.MouseEvent me){System.out.println("button eneterd");}
+public  void mouseExited(java.awt.event.MouseEvent me){System.out.println("button exited");}
+} 
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    <img src="j6.png">
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

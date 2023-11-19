@@ -48,21 +48,53 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">AWT</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>17. Create a simple AWT application that displays a TextArea with Custom Layout.</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                
+            import java.awt.*;
+            import java.awt.event.*;
+            
+            class CustomLayoutExample {
+                public static void main(String[] args) {
+                    
+                    Frame frame = new Frame("Custom Layout Example");
+            
+                   
+                    TextArea textArea = new TextArea("This is a TextArea with a custom layout.");
+            
+                    
+                    frame.setLayout(new GridBagLayout());
+                    GridBagConstraints gbc = new GridBagConstraints();
+                    gbc.insets = new Insets(10, 10, 10, 10); // Add some padding
+            
+                    
+                    gbc.gridx = 0;
+                    gbc.gridy = 0;
+                    gbc.fill = GridBagConstraints.BOTH;
+                    gbc.weightx = 1.0;
+                    gbc.weighty = 1.0;
+                    frame.add(textArea, gbc);
+            
+                    
+                    frame.addWindowListener(new WindowAdapter() {
+                        public void windowClosing(WindowEvent e) {
+                            System.exit(0);
+                        }
+                    });
+            
+                   
+                    frame.setSize(400, 300);
+                    frame.setVisible(true);
+                }
+            }  
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    <img src="17.png">
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

@@ -51,18 +51,45 @@
             <h3 class="main">Java Basics</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>40. Java program to find surface area of cube</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                
+                    class AreaOfCube{
+
+                    double area(double s){
+    
+                    double a = 6*Math.pow(s,2);
+    
+                    return a;
+    
+                    }
+    
+                    }
+    
+                    class Cube{
+    
+                    public static void main(String a[]){
+    
+                    double s = 10;
+    
+                    System.out.println("side of CUbe: "+s);
+    
+                    AreaOfCube obj = new AreaOfCube();
+    
+                    double ans = obj.area(s);
+    
+                    System.out.println("Area of CUbe is "+ ans);
+    
+                    }
+    
+                    } 
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+side of CUbe: 10.0
+
+Area of CUbe is 600.0
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

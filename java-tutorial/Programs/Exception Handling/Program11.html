@@ -48,21 +48,36 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Exception Handling</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>11. Write a Java program to show an example of throws Keyword.</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                import java.io.IOException;
+
+                public class ThrowsExample {
+                public static void main(String[] args) {
+                        try {
+                            exampleMethod();
+                        } catch (IOException e) {
+                            System.out.println("Caught IOException: " + e.getMessage());
+                        }
+                    }
+                                                        
+                    // Using 'throws' in the method signature to declare that it may throw an IOException
+                    private static void exampleMethod() throws IOException {
+                        System.out.println("Inside exampleMethod");
+                        // Simulating an IOException
+                        throw new IOException("This is a simulated IOException");
+                    }
+                }     
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Inside exampleMethod 
+
+Caught IOException: This is a simulated IOException 
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

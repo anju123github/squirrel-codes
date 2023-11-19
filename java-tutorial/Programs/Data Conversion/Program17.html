@@ -48,21 +48,40 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Data Conversion</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>17. How to convert int to double</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                public class IntToDoubleConversion {
+                    public static void main(String[] args) {
+                        // Convert int to double implicitly
+                        int intValue = 42;
+                        double doubleValue = intValue;
+                
+                        // Print the results
+                        System.out.println("Original int value: " + intValue);
+                        System.out.println("Converted to double value: " + doubleValue);
+                
+                        // Example of explicit casting from double to int
+                        double anotherDoubleValue = 78.56;
+                        int anotherIntValue = (int) anotherDoubleValue;
+                
+                        // Print the results
+                        System.out.println("\nOriginal double value: " + anotherDoubleValue);
+                        System.out.println("Converted to int value (with explicit casting): " + anotherIntValue);
+                    }
+                }
+                 
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Original int value: 42
+Converted to double value: 42.0
+
+Original double value: 78.56
+Converted to int value (with explicit casting): 78
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

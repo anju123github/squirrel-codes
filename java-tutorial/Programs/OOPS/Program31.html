@@ -48,21 +48,39 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">OOPs</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>31. Write a Java program to create a class called Car with private instance variables company_name, model_name, year, and mileage. Provide public getter and setter methods to access and modify the company_name, model_name, and year variables. However, only provide a getter method for the mileage variable.</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+public class CarDemo {
+    public static void main(String[] args) {
+        // Create an instance of the Car class
+        Car myCar = new Car();
+
+        // Set values using setter methods
+        myCar.setCompany_name("Toyota");
+        myCar.setModel_name("Camry");
+        myCar.setYear(2022);
+        myCar.setMileage(30.5);
+
+        // Display values using getter methods
+        System.out.println("Company Name: " + myCar.getCompany_name());
+        System.out.println("Model Name: " + myCar.getModel_name());
+        System.out.println("Year: " + myCar.getYear());
+        System.out.println("Mileage: " + myCar.getMileage());
     }
 }
+  
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Company Name: Toyota
+Model Name: Camry
+Year: 2022
+Mileage: 30.5
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

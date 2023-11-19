@@ -51,18 +51,64 @@
             <h3 class="main">Java Basics</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>50. Java Pogram To Find Distance Between Two Points</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                class Calculate_Commission{
+
+                    float formula(float cp, float a){
+    
+                    return ((cp/100)*a);
+    
+                    }
+    
+                    }
+    
+    
+                    class CommissionValue{
+    
+                    public static void main(String args[]){
+    
+                    float cp;
+    
+                    float a;
+    
+    
+                    java.util.Scanner Input = new java.util.Scanner(System.in);
+    
+    
+                    System.out.println("Enter the commision percentage: ");
+    
+                    cp = Input.nextFloat();
+    
+    
+                    System.out.println("Enter the Amount: ");
+    
+                    a = Input.nextFloat();
+    
+    
+                    Calculate_Commission CA = new Calculate_Commission();
+    
+                    float ans = CA.formula(cp,a);
+    
+    
+                    System.out.println("Commission amount: "+ans);
+    
+                    }
+    
+                    }  
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    Enter the commision percentage:
+
+    50
+
+    Enter the Amount:
+
+    10000
+
+    Commission amount: 5000.0
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

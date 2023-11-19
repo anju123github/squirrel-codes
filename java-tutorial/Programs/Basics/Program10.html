@@ -51,18 +51,40 @@
             <h3 class="main">Java Basics</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>10. Write a Java program and compute the sum of the digits of an integer</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                
+                class SumOfDigitNumbers{
+
+                    public static void main(String[] args){
+    
+                    int num = 123;
+    
+                    int digit;
+    
+                    int sum = 0;
+    
+    
+                    while(num › 0){
+    
+                    digit = num % 10;
+    
+                    sum = sum + digit;
+    
+                    num = num/10;
+    
+                    }
+    
+                    System.out.println("Sum of digits: "+sum);
+    
+                    }
+    
+                    }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    Sum of digits: 6
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

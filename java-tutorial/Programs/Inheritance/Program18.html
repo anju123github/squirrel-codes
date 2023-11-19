@@ -48,21 +48,111 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Inheritance</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>18. Write a Java program to create an abstract class Animal with abstract methods eat() and sleep(). Create subclasses Lion, Tiger, and Deer that extend the Animal class and implement the eat() and sleep() methods differently based on their specific behavior.</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+// Abstract class Animal
+abstract class Animal {
+    // Abstract methods
+    public abstract void eat();
+    public abstract void sleep();
+}
+                                        
+// Subclass Lion extending Animal
+class Lion extends Animal {
+    // Implementing the eat method for Lion
+    
+    public void eat() {
+        System.out.println("Lion eats meat");
+    }
+                                        
+    // Implementing the sleep method for Lion
+    
+    public void sleep() {
+        System.out.println("Lion sleeps on rocks");
     }
 }
+                                        
+// Subclass Tiger extending Animal
+class Tiger extends Animal {
+    // Implementing the eat method for Tiger
+    
+    public void eat() {
+        System.out.println("Tiger eats meat");
+    }
+                                        
+    // Implementing the sleep method for Tiger
+    
+    public void sleep() {
+        System.out.println("Tiger sleeps in the grass");
+    }
+}
+                                        
+// Subclass Deer extending Animal
+class Deer extends Animal {
+    // Implementing the eat method for Deer
+    
+    public void eat() {
+        System.out.println("Deer eats grass");
+    }
+                                        
+    // Implementing the sleep method for Deer
+    
+    public void sleep() {
+        System.out.println("Deer sleeps under trees");
+    }
+}
+                                        
+// Main class
+public class AbstractAnimalExample {
+    public static void main(String[] args) {
+        // Create instances of Lion, Tiger, and Deer
+        Lion lion = new Lion();
+        Tiger tiger = new Tiger();
+        Deer deer = new Deer();
+                                        
+        // Perform operations on the animals
+        System.out.println("Lion:");
+        lion.eat();
+        lion.sleep();
+                                        
+        System.out.println("\nTiger:");
+        tiger.eat();
+        tiger.sleep();
+                                        
+        System.out.println("\nDeer:");
+        deer.eat();
+        deer.sleep();
+    }
+} 
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Lion: 
+
+Lion eats meat 
+
+Lion sleeps on rocks 
+
+ 
+
+Tiger: 
+
+Tiger eats meat 
+
+Tiger sleeps in the grass 
+
+ 
+
+Deer: 
+
+Deer eats grass 
+
+Deer sleeps under trees
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

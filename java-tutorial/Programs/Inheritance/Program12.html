@@ -48,21 +48,65 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Inheritance</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>12. Create a program, showing an example of super function</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+// Base class Animal
+class Animal {
+    // Property
+    protected String species;
+                                        
+    // Constructor
+    public Animal(String species) {
+        this.species = species;
+    }
+                                        
+    // Method
+    public void displayInfo() {
+        System.out.println("Species: " + species);
     }
 }
+                                        
+// Subclass Bird extending Animal
+class Bird extends Animal {
+    // Additional property
+    private String featherColor;
+                                        
+    // Constructor
+    public Bird(String species, String featherColor) {
+        // Call the constructor of the parent class using super()
+        super(species);
+        this.featherColor = featherColor;
+    }
+                                        
+    // Method overriding the displayInfo method in the parent class
+    
+    public void displayInfo() {
+        // Call the displayInfo method of the parent class using super()
+        super.displayInfo();
+        System.out.println("Feather Color: " + featherColor);
+    }
+}
+                                        
+// Main class
+public class SuperFunctionExample {
+    public static void main(String[] args) {
+        // Create an instance of Bird
+        Bird myBird = new Bird("Sparrow", "Brown");
+                                        
+        // Access properties and methods using the instance of Bird
+        myBird.displayInfo(); // Calling the overridden method in the subclass
+} 
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Species: Sparrow 
+
+Feather Color: Brown
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

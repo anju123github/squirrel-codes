@@ -48,21 +48,44 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Data Conversion</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>28. How to convert Decimal to Hex</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+import java.util.Scanner;
+
+public class DecimalToHexConverter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input: Decimal number
+        System.out.print("Enter a decimal number: ");
+        int decimalNumber = scanner.nextInt();
+
+        // Convert decimal to hex
+        String hexadecimal = decimalToHex(decimalNumber);
+
+        // Output: Display the result
+        System.out.println("Hexadecimal equivalent: " + hexadecimal);
+
+        // Close the scanner
+        scanner.close();
+    }
+
+    private static String decimalToHex(int decimalNumber) {
+        // Using Integer.toHexString to convert decimal to hexadecimal
+        return Integer.toHexString(decimalNumber).toUpperCase();
     }
 }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Enter a decimal number: 255
+Hexadecimal equivalent: FF
+
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

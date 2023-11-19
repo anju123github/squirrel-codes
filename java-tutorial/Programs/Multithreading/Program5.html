@@ -48,21 +48,90 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Multithreading</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>5. Write a Java program that calculates the sum of all prime numbers up to a given limit using multiple threads.</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}
+            <pre class="code"><code class="language-java">
+                class PrimeSumCalculator extends Thread {
+                    private final int start;
+                    private final int end;
+                    private final boolean[] isPrime;
+                    private long sum;
+                
+                    public PrimeSumCalculator(int start, int end, boolean[] isPrime) {
+                        this.start = start;
+                        this.end = end;
+                        this.isPrime = isPrime;
+                        this.sum = 0;
+                    }
+                
+                    @Override
+                    public void run() {
+                        for (int i = start; i <= end; i++) {
+                            if (isPrime[i]) {
+                                sum += i;
+                            }
+                        }
+                    }
+                
+                    public long getSum() {
+                        return sum;
+                    }
+                }
+                
+                public class PrimeSumMultiThreaded {
+                    public static void main(String[] args) {
+                        int limit = 100; // Set your desired limit
+                
+                        // Create an array to track prime numbers using the Sieve of Eratosthenes algorithm
+                        boolean[] isPrime = new boolean[limit + 1];
+                        for (int i = 2; i <= limit; i++) {
+                            isPrime[i] = true;
+                        }
+                
+                        for (int i = 2; i * i <= limit; i++) {
+                            if (isPrime[i]) {
+                                for (int j = i * i; j <= limit; j += i) {
+                                    isPrime[j] = false;
+                                }
+                            }
+                        }
+                
+                        // Set up threads to calculate prime sum in different ranges
+                        int numThreads = 4; // Set the number of threads
+                        PrimeSumCalculator[] calculators = new PrimeSumCalculator[numThreads];
+                        int rangeSize = limit / numThreads;
+                
+                        for (int i = 0; i < numThreads; i++) {
+                            int start = i * rangeSize + 1;
+                            int end = (i == numThreads - 1) ? limit : (i + 1) * rangeSize;
+                
+                            calculators[i] = new PrimeSumCalculator(start, end, isPrime);
+                            calculators[i].start();
+                        }
+                
+                        // Wait for all threads to finish and accumulate the results
+                        long totalSum = 0;
+                        for (PrimeSumCalculator calculator : calculators) {
+                            try {
+                                calculator.join();
+                                totalSum += calculator.getSum();
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                
+                        // Print the result
+                        System.out.println("Sum of prime numbers up to " + limit + ": " + totalSum);
+                    }
+                }
+
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    Sum of prime numbers up to 100: 1060
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

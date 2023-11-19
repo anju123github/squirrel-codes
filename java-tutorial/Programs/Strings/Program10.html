@@ -48,21 +48,49 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Strings</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>10. Program to check whether a string is a Palindrome.</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+             
+import java.util.Scanner;
+
+public class PalindromeChecker {
+    public static void main(String[] args) {
+        // Get input from the user
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine().toLowerCase(); // Case-insensitive comparison
+
+        // Check if the string is a palindrome
+        if (isPalindrome(inputString)) {
+            System.out.println("The string is a palindrome.");
+        } else {
+            System.out.println("The string is not a palindrome.");
+        }
     }
-}
+
+    // Function to check if a string is a palindrome
+    private static boolean isPalindrome(String str) {
+        // Remove spaces and convert the string to a char array
+        char[] charArray = str.replaceAll("\\s", "").toCharArray();
+
+        // Check if the string is the same when read forward and backward
+        for (int i = 0; i < charArray.length / 2; i++) {
+            if (charArray[i] != charArray[charArray.length - 1 - i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+}   
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    Enter a string: A man a plan a canal Panama
+    The string is a palindrome. 
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

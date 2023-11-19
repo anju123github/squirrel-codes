@@ -48,21 +48,55 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Strings</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>27. Program to find the largest and smallest word in a string</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+public class LargestSmallestWord {
+    public static void main(String[] args) {
+        String inputString = "Java is a powerful programming language";
+
+        // Calling the method to find the largest and smallest words
+       findLargestSmallestWords(inputString);
+    }
+
+    public static void findLargestSmallestWords(String str) {
+        // Splitting the string into words
+        String[] words = str.split("\\s+");
+
+        // Initializing variables for the largest and smallest words
+        String smallestWord = words[0];
+        String largestWord = words[0];
+
+        // Finding the largest and smallest words
+        for (String word : words) {
+            // Updating smallestWord if the current word is smaller
+            if (word.length() < smallestWord.length()) {
+                smallestWord = word;
+            }
+
+           // Updating largestWord if the current word is larger
+            if (word.length() > largestWord.length()) {
+                largestWord = word;
+            }
+        }
+
+       // Displaying the result
+        System.out.println("Input String: " + str);
+       System.out.println("Smallest Word: " + smallestWord);
+        System.out.println("Largest Word: " + largestWord);
     }
 }
+
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    Input String: Java is a powerful programming language
+    Smallest Word: is
+    Largest Word: programming
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

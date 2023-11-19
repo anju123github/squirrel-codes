@@ -48,21 +48,42 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Data Conversion</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>9. How to convert String to Date</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+                
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+                                
+public class StringToDateConverter {
+                                
+    public static void main(String[] args) {
+        // Example string containing a date
+        String dateString = "2023-11-14";
+                                
+        // Define the date format to match the pattern in the string
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                                
+        try {
+            // Parse the string to a Date object using the defined format
+            Date convertedDate = dateFormat.parse(dateString);
+                                
+            // Print the result
+            System.out.println("Converted date: " + convertedDate);
+        } catch (ParseException e) {
+            // Handle the exception (e.g., print an error message)
+            System.out.println("Error: Unable to convert the string to a date.");
+        }
     }
-}
+}  
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    Converted date: Mon Nov 14 00:00:00 UTC 2023 
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

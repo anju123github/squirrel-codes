@@ -48,21 +48,43 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Data Conversion</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
+            <p>29. How to convert Octal to Decimal</p>
             <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <pre class="code"><code class="language-java">
+import java.util.Scanner;
+
+public class OctalToDecimalConverter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input: Octal number
+        System.out.print("Enter an octal number: ");
+        String octalNumber = scanner.next();
+
+        // Convert octal to decimal
+        int decimalNumber = octalToDecimal(octalNumber);
+
+        // Output: Display the result
+        System.out.println("Decimal equivalent: " + decimalNumber);
+
+        // Close the scanner
+        scanner.close();
+    }
+
+    private static int octalToDecimal(String octalNumber) {
+        // Using Integer.parseInt with base 8 to convert octal to decimal
+        return Integer.parseInt(octalNumber, 8);
     }
 }
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+Enter an octal number: 345
+Decimal equivalent: 229
+
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">

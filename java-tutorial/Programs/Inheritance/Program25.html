@@ -48,21 +48,85 @@
         </div>
         <div class="content">
             <!-- topic name -->
-            <h3 class="main">Java Basics</h3>
+            <h3 class="main">Inheritance</h3>
 
             <!-- Programs list -->
-            <p>1. Write a Java program to print ‘Hello World!’ on screen</p>
-            <h3>Code</h3>
-            <pre class="code"><code class="language-java">import java.lang.*
-public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+            <p>25. Write a Java program to create an abstract class Bird with abstract methods fly() and makeSound(). Create subclasses Eagle and Hawk that extend the Bird class and implement the respective methods to describe how each bird flies and makes a sound.</p>
+            <h3>code</h3>
+            <pre class="code"><code class="language-java">
+             
+// Abstract class Bird
+abstract class Bird {
+    // Abstract methods
+    public abstract void fly();
+    public abstract void makeSound();
+}
+                                        
+// Subclass Eagle extending Bird
+class Eagle extends Bird {
+    // Implementing the fly method for Eagle
+    
+    public void fly() {
+        System.out.println("Eagle soars high in the sky");
+    }
+                                        
+    // Implementing the makeSound method for Eagle
+    
+    public void makeSound() {
+        System.out.println("Eagle screeches loudly");
     }
 }
+                                        
+// Subclass Hawk extending Bird
+class Hawk extends Bird {
+    // Implementing the fly method for Hawk
+    
+    public void fly() {
+        System.out.println("Hawk glides gracefully through the air");
+    }
+                                        
+    // Implementing the makeSound method for Hawk
+    
+    public void makeSound() {
+        System.out.println("Hawk emits a sharp cry");
+    }
+}
+                                        
+// Main class
+public class AbstractBirdExample {
+    public static void main(String[] args) {
+        // Create instances of Eagle and Hawk
+        Eagle eagle = new Eagle();
+        Hawk hawk = new Hawk();
+                                        
+        // Describe how each bird flies and makes a sound
+        System.out.println("Eagle:");
+        eagle.fly();
+        eagle.makeSound();
+                                        
+        System.out.println(); // Empty line for clarity
+                                        
+        System.out.println("Hawk:");
+        hawk.fly();
+        hawk.makeSound();
+    }
+}   
 </code></pre>
 <h3>Output</h3>
 <pre class="code" style="padding: 2%;">
-    Hello World!
+    Eagle: 
+
+    Eagle soars high in the sky 
+    
+    Eagle screeches loudly 
+    
+     
+    
+    Hawk: 
+    
+    Hawk glides gracefully through the air 
+    
+    Hawk emits a sharp cry 
 </pre>
             <!-- previous next buttons -->
             <!-- <div class="toggle-page-btns">
